@@ -1,0 +1,121 @@
+// USER VARIABLES SECTION
+
+// $maxWidth: 1920;//ширина макета в граф. редакторе
+// $maxWidthContainer: 1170;//ширина ограничивающего контейнера без паддингов
+// $containerPaddings: 30;//сумма левого и правого паддингов ограничивающего контейнера
+// $maxContainerWidth: $maxWidthContainer + $containerPaddings;// итоговая ширина ограничивающего контейнера
+
+// paths
+	// use: background-image: url($icos + 'arrow-right.svg');
+// $img: '../images/';
+// $icos: '../images/icons/';
+// $svg: '../images/icons-svg/';
+
+
+// media
+// $lg: 1199px;
+// $md: 991px;
+// $sm: 767.98px;
+// $xs: 576px;
+// $xss: 480px;
+// $xsss: 375px;
+// $min: 360px;
+// $mins: 320px;
+
+
+// $accent: #5327ff // Accent Color
+// $fontsize: 16px // Body Font Size
+// $textcolor: #333 // Text Color
+// $lineheight: 1.65 // Document Line Height
+$userfont: 'League Spartan', sans-serif; // User Font Family
+// $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/swiper/swiper-bundle'
+// @import 'node_modules/swiper/swiper'
+// @import 'node_modules/swiper/components/navigation/navigation.min'
+// @import "/node_modules/css/navigation"
+// @import "/node_modules/formhandler.js/dist/css/formhandler.min.css"
+
+// Bootstrap 4
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// Bootstrap 5
+// @import "../../libs/bootstrap-5.0.2/scss/_functions";
+// @import "../../libs/bootstrap-5.0.2/scss/_variables";
+// @import "../../libs/bootstrap-5.0.2/scss/_mixins";
+// @import "../../libs/bootstrap-5.0.2/scss/root";
+// @import "../../libs/bootstrap-5.0.2/scss/_reboot";
+// @import "../../libs/bootstrap-5.0.2/scss/_type";
+// @import "../../libs/bootstrap-5.0.2/scss/_images";
+// @import "../../libs/bootstrap-5.0.2/scss/_containers";
+// @import "../../libs/bootstrap-5.0.2/scss/_grid";
+
+// @import "/node_modules/formhandler.js/dist/css/formhandler.min.css"
+
+// micromodal
+/*--micromodal--*/
+@import "../../js/vendor/libs-vanilla/micromodal/micromodal";
+/*--end micromodal--*/
+
+// noUiSlider
+// /*--noUiSlider--*/
+// @import "../../js/vendor/libs-vanilla/noUiSlider/nouislider.min";
+// /*--end noUiSlider--*/
+
+//magnific-popup	
+// /*-----------magnific-popup-----------*/
+// @import "../../js/vendor/libs/magnific-popup/dist/magnific-popup";
+// /*-----------END magnific-popup-------*/
+
+//tippy	
+// /*-----------tippy-----------*/
+// @import '/node_modules/tippy.js/dist/tippy.css'
+// /*-----------END magnific-popup-------*/
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+// @include font('Gilroy-Light', normal, 400, '../fonts/gilroy/Gilroy-Light.woff2')
+// @include font('Gilroy-Extrabold', italic, 400, '../fonts/gilroy/Gilroy-Extrabold.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+// ::placeholder
+// 	color: #666
+
+// ::selection
+// 	background-color: $accent
+// 	color: #fff
+
+// input, textarea
+// 	outline: none
+// 	&:focus:required:invalid
+// 		border-color: red
+// 	&:required:valid
+// 		border-color: green
+
+body
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+// 	font-size: $fontsize
+// 	line-height: $lineheight
+// 	color: $textcolor
+// 	min-width: 320px
+// 	position: relative
+// 	overflow-x: hidden

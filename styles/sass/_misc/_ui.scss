@@ -1,0 +1,97 @@
+/*--------------------ui----------------------*/
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 49px;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  background-color: $accent;
+  padding: 5px 24px;
+  font-size: 14px;
+	line-height: 17px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  transition: background-color .2s ease;
+  border: 1px solid #F1F1F1;
+	
+  &:hover{
+     background-color: lighten($accent, 5%);
+     color: #fff;
+  }
+   
+		
+  &:active{
+   background-color: darken($accent, 5%);
+   color: #fff;
+  }
+  
+  &-fw{
+   width: 100%;
+  }
+   
+}
+.title {
+  @include adaptive-value('margin-bottom', 144, 40, 1);
+}
+.title__sub {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 7.5px;
+  color: #656D72;
+
+  &:before{
+    content: '';
+    width: 16px;
+    height: 2px;
+    margin-right: 16px;
+    background: #D9D9D9;
+  }
+
+}
+.title__heading {
+  color: $text;
+  margin: 0;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: calc(45/36);
+
+
+  &--big{
+    font-size: 44px;
+    line-height: calc(55/44);
+
+  }
+
+  span{
+    color: $accent;
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  column-gap: 34px;
+  row-gap: 12px;
+}
+.socials__item {
+  list-style-type: none;
+}
+.socials__link {
+  font-size: 25px;
+  color: $text;
+  @media (any-hover: hover) { //только для устройств с ховером
+      &:hover{
+        color: $accent;
+      }
+    }
+}
+/*--------------------END ui----------------------*/ 
