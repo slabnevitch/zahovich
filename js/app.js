@@ -30,7 +30,7 @@
 // require('./vendor/libs-vanilla/service-functions/mobileDetect.js')
 
 //- All in one file--------------------------
-// require('./vendor/service-functions/all-functions.js')
+require('./vendor/libs-vanilla/service-functions/all-functions.js')
 
 
 //- WITH JQUERY===================================

@@ -29,29 +29,37 @@
 			<div class="header__logo">
 				<img src="images/dist/logo-big.svg" alt="alt">
 			</div>
-			<form action="#" class="header__search search-header">
-				<input autocomplete="off" type="text" name="" class="search-header__input" placeholder="Поиск"/>
-				<button type="submit">
-					<i class="icon-search"></i>
-				</button>
-			</form>
+			<div class="header__search search-header">
+				<form action="#" class="search-header__form">
+					<input autocomplete="off" type="text" name="" class="search-header__input" placeholder="Поиск"/>
+					<button type="submit" class="search-header__send">
+						<i class="icon-search"></i>
+					</button>
+				</form>
+				
+			</div>
 
 			<div class="header__mutations">
 				<button class="header__loc">
 					<i class="icon-loc"></i>
 					<span class="header__city">Москва</span>
 				</button>
-				<div class="header__phone phone-header" data-single-dropdown>
+				<div class="header__phone phone-header">
 					<a href="tel:88007774967" class="phone-header__link">8-800-777-49-67</a>
-					<button type="button" class="menu__arrow icon-chev-down">...</button>
-					<ul class="single-dropdown">
-						<li class="single-dropdown__item">
-							<a href="tel:88007774967" class="single-dropdown__link">8-800-777-49-67</a>
-						</li>
-						<li class="single-dropdown__item">
-							<a href="tel:88007774967" class="single-dropdown__link">8-800-777-49-67</a>
-						</li>
-					</ul>
+					<div class="menu__item" data-single-dropdown>
+						<button type="button" class="menu__arrow">
+							<i class="icon-chev-down"></i>
+						</button>
+						<ul class="single-dropdown">
+							<li class="single-dropdown__item">
+								<a href="tel:88007774967" class="single-dropdown__link">8-800-777-49-67</a>
+							</li>
+							<li class="single-dropdown__item">
+								<a href="tel:88007774967" class="single-dropdown__link">8-800-777-49-67</a>
+							</li>
+						</ul>
+						
+					</div>
 
 					<button class="phone-header__callback">Заказать звонок</button>
 				</div>

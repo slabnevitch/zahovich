@@ -6,7 +6,9 @@ $maxContainerWidth: $maxWidthContainer + $containerPaddings;// итоговая 
 // colors
 $accent: #E8AA31;
 $text: #141414;
-$gray:#EAE6FE;
+$l-gray:#ECF1F2;
+$gray: rgba(7, 7, 7, 0.03);
+$line: rgba(#040404, .5);
 
 // paths
 	// use: background-image: url($icos + 'arrow-right.svg');

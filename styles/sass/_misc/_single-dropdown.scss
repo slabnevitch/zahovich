@@ -20,6 +20,10 @@
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.25s;
+
+	li{
+		list-style-type: none;
+	}
 }
 .menu__arrow{
 	width: 20px;
