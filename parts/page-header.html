@@ -1,2 +1,74 @@
 <header class="header">
+	<div class="header__top">
+		<div class="wrapper">
+			<div class="header__menu menu-header">
+					<ul class="menu">
+						<li class="menu__item">
+							<a href="#" class="menu__link">О нас</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">Оплата и доставка</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">Новости</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">Контакты</a>
+						</li>
+					</ul>
+					<button class="toggle-mnu"><span></span></button>
+			</div>
+
+			<a href="#" class="header__account">Личный кабинет</a>
+			
+		</div>
+	</div>
+
+	<div class="header__middle">
+		<div class="wrapper">
+			<div class="header__logo">
+				<img src="images/dist/logo-big.svg" alt="alt">
+			</div>
+			<form action="#" class="header__search search-header">
+				<input autocomplete="off" type="text" name="" class="search-header__input" placeholder="Поиск"/>
+				<button type="submit">
+					<i class="icon-search"></i>
+				</button>
+			</form>
+
+			<div class="header__mutations">
+				<button class="header__loc">
+					<i class="icon-loc"></i>
+					<span class="header__city">Москва</span>
+				</button>
+				<div class="header__phone phone-header" data-single-dropdown>
+					<a href="tel:88007774967" class="phone-header__link">8-800-777-49-67</a>
+					<button type="button" class="menu__arrow icon-chev-down">...</button>
+					<ul class="single-dropdown">
+						<li class="single-dropdown__item">
+							<a href="tel:88007774967" class="single-dropdown__link">8-800-777-49-67</a>
+						</li>
+						<li class="single-dropdown__item">
+							<a href="tel:88007774967" class="single-dropdown__link">8-800-777-49-67</a>
+						</li>
+					</ul>
+
+					<button class="phone-header__callback">Заказать звонок</button>
+				</div>
+
+				<a href="#" class="header__wishes icon-favorites"></a>
+
+				<div class="header__cart cart-header">
+					<a href="" class="cart-header__icon icon-cart">
+						<span class="cart-header__total">0</span>
+					</a>
+					<div class="cart-header__right">
+						<div class="cart-header__summ">0 р.</div>
+						<a href="" class="cart-header__order">Оформить заказ</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </header>

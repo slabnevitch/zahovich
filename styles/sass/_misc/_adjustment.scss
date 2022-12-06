@@ -209,7 +209,7 @@ padding-bottom: 52.25%;
   background-color: transparent;
   border: none;
 
-  @include min-screen($sm){
+  @include min-screen($md){
  	 display: none;
   	
   }  
