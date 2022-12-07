@@ -1,6 +1,6 @@
 <header class="header">
 	<div class="header__top">
-		<div class="wrapper">
+		<div class="wrapper header__top-wrapper">
 			<div class="header__menu menu-header">
 					<ul class="menu">
 						<li class="menu__item">
@@ -19,7 +19,7 @@
 					<button class="toggle-mnu"><span></span></button>
 			</div>
 
-			<a href="#" class="header__account">Личный кабинет</a>
+			<a href="#" class="header__account" data-da=".header__mutations,991,2"><span>Личный кабинет</span></a>
 			
 		</div>
 	</div>
@@ -39,13 +39,16 @@
 				
 			</div>
 
-			<div class="header__mutations">
+			<div class="header__mutations" data-da=".header__top-wrapper,991,first">
 				<button class="header__loc">
 					<i class="icon-loc"></i>
 					<span class="header__city">Москва</span>
 				</button>
 				<div class="header__phone phone-header">
-					<a href="tel:88007774967" class="phone-header__link">8-800-777-49-67</a>
+					<a href="tel:88007774967" class="phone-header__link">
+						<i class="icon-phone"></i>
+						<span>8-800-777-49-67</span>
+						</a>
 					<div class="menu__item" data-single-dropdown>
 						<button type="button" class="menu__arrow">
 							<i class="icon-chev-down"></i>

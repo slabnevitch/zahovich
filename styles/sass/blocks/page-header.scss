@@ -19,6 +19,10 @@
 		flex-wrap: wrap;
 		grid-row-gap: 5px;
 		@include adaptive-value('column-gap', 60, 5, 1);
+
+		@include max-screen($md){
+			display: none;
+		}
 		.menu__link {
 			font-weight: 500;
 			font-size: 16px;
@@ -60,6 +64,12 @@
 	    font-size: 24px;
 	}
 
+	span{
+		@include max-screen($md){
+			display: none;
+		}
+	}
+
 }
 .toggle-mnu {}
 .header__middle {
@@ -83,8 +93,8 @@
 
 }
 .search-header {
-	@include adaptive-value('padding-left', 158, 0, 1);
-	@include adaptive-value('padding-right', 238, 0, 1);
+	@include adaptive-value('padding-left', 142, 0, 1);
+	@include adaptive-value('padding-right', 196, 0, 1);
 
 	@include max-screen($maxWidthContainer + px){
 		padding-left: 30px;
@@ -93,6 +103,10 @@
 	@include max-screen($lg){
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	@include max-screen($xss){
+		display: none;
 	}
 }
 .search-header__form{
@@ -117,6 +131,7 @@
 	background-color: $gray;
 	display: block;
 	height: 41px;
+
 	padding: 0 42px;
 	font-weight: 500;
 	@include placecolor(rgba(0, 0, 0, 0.5));
@@ -126,11 +141,18 @@
 .header__mutations {
 	display: grid;
 	grid-auto-flow: column;
+	justify-content: start;
 	align-items: center;
 	column-gap: 30px;
+	justify-content: space-between;
 
 	@include max-screen($lg){
 		column-gap: 15px;
+		justify-content: start;
+	}
+	@include max-screen($md){
+		column-gap: 35px;
+		padding-left: 10px;
 	}
 }
 .header__loc {
@@ -139,6 +161,9 @@
 	align-items: center;
 	column-gap: 10px;
 
+	@include max-screen($md){
+		display: none;
+	}
 	@include min-screen($lg){
 		padding-right: 25px;
 	}
@@ -156,7 +181,11 @@
 .header__phone {}
 .phone-header {
 	position: relative;
-	padding-right: 15px;
+
+	@include min-screen($md){
+		padding-right: 15px;
+		
+	}
 	.menu__arrow {
 		position: absolute;
 		top: 0;
@@ -178,6 +207,10 @@
 	}
 	[data-single-dropdown]{
 		position: static;
+
+		@include max-screen($md){
+			display: none;
+		}
 		
 	}
 	.single-dropdown {
@@ -188,6 +221,10 @@
 		background-color: #fff;
 		border-radius: 17px;
 		border: 1px solid $line;
+
+		@include max-screen($md){
+			display: none;
+		}
 
 		.single-dropdown__link {
 			display: block;
@@ -204,6 +241,18 @@
 	font-weight: 600;
 font-size: 18px;
 line-height: 22px;
+span{
+	@include max-screen($md){
+			display: none;	
+	}
+}
+.icon-phone{
+	font-size: 25px;
+	color: 	#fff;
+	@include min-screen($md){
+			display: none;	
+	}
+}
 }
 
 .single-dropdown__item {
@@ -214,11 +263,20 @@ line-height: 22px;
 	font-size: 18px;
 	line-height: 22px;
 	color: $accent;
+
+	@include max-screen($md){
+		display: none;
+	}
 }
 .header__wishes {
 	color: $text;
 	text-decoration: none;
 		font-size: 27px;
+
+		@include max-screen($md){
+			color: #fff;
+			font-size: 25px;
+		}
 
 }
 .header__cart {}
@@ -237,11 +295,16 @@ line-height: 22px;
 	text-decoration: none;
 	color: $text;
 
+	@include max-screen($md){
+		color: #fff;
+		font-size: 30px;
+	}
+
 }
 .cart-header__total {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -5px;
 	min-width: 14px;
 	min-height: 14px;
 	border-radius: 50%;
@@ -257,6 +320,9 @@ color: #FFFFFF;
 	font-weight: 500;
 font-size: 16px;
 line-height: 20px;
+	@include max-screen($md){
+		display: none;
+	}
 }
 .cart-header__summ {}
 .cart-header__order {

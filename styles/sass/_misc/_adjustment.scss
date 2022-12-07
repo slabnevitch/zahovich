@@ -29,7 +29,7 @@ body{
 	overflow: hidden;
 }
 #wrapper-for-scroll-fix.modal-open {
-    padding-right: var(--scroll-width);
+  padding-right: var(--scroll-width);
 }
 
 // Прижать футер к низу
@@ -54,16 +54,7 @@ body{
 // }
 
 // END Прижать футер к низу
-section{
-	// min-height: 100%;
-	// height: 100%;
-	padding-top: 123px;
-	// overflow-y: auto;
-	// overflow: hidden;
-	@include max-screen($sm){
-		padding-top: 70px;
-	}
-}
+
 button{
 	@media (any-hover: hover) { //только для устройств с ховером
 		cursor: pointer;
@@ -202,66 +193,69 @@ padding-bottom: 52.25%;
 // @import "_misc/multilevel-dropdown.scss";
 @import "_misc/_single-dropdown.scss";
 
-.toggle-mnu{
-	position: fixed;
-	right: 30px;
-	top: 15px;
-  display: block;
-  width: 28px;
-  height: 28px;
-  // margin-top: 14px;
-  padding: 0;
-  background-color: transparent;
-  border: none;
+@mixin toggle-mnu($color: #000, $point: $md, $top:15px, $right:30px){
+	.toggle-mnu{
+		position: fixed;
+		right: $right;
+		top: $top;
+	  display: block;
+	  width: 28px;
+	  height: 28px;
+	  // margin-top: 14px;
+	  padding: 0;
+	  background-color: transparent;
+	  border: none;
 
-  @include min-screen($md){
- 	 display: none;
-  	
-  }  
+	  @include min-screen($point){
+	 	 display: none;
+	  	
+	  }  
 
-  span:after, span:before{
+	  span:after, span:before{
 
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 9px;
-  } 
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    top: 9px;
+	  } 
 
-  span:after{
+	  span:after{
 
-    top: 18px;
-  }
+	    top: 18px;
+	  }
 
-  span{
+	  span{
 
-    position: relative;
-    display: block;
-  } 
+	    position: relative;
+	    display: block;
+	  } 
 
-  span, span:after, span:before{
+	  span, span:after, span:before{
 
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    transition: all 0.3s;
-    backface-visibility: hidden;
-    border-radius: 2px;
-  }
+	    width: 100%;
+	    height: 2px;
+	    background-color: $color;
+	    transition: all 0.3s;
+	    backface-visibility: hidden;
+	    border-radius: 2px;
+	  }
 
 
-  &.on span{
+	  &.on span{
 
-    background-color: transparent;
-  } 
+	    background-color: transparent;
+	  } 
 
-  &.on span:before{
+	  &.on span:before{
 
-    transform: rotate(45deg) translate(-1px, 0px);
-  } 
+	    transform: rotate(45deg) translate(-1px, 0px);
+	  } 
 
-  &.on span:after{
+	  &.on span:after{
 
-    transform: rotate(-45deg) translate(6px, -7px);
-  } 
-} 
+	    transform: rotate(-45deg) translate(6px, -7px);
+	  } 
+	} 
+}
+@include toggle-mnu(#fff, $md, 15px, 15px);
 /*--------------------END adjustment----------------------*/ 

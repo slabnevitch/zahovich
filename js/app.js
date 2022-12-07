@@ -63,7 +63,7 @@ require('./vendor/libs-vanilla/service-functions/all-functions.js')
 
 //- VANILLA JS===================================
 //- dynamic-adaptive--------------------------
-// require('./vendor/libs-vanilla/dynamic-adaptive/da(es6).js')
+require('./vendor/libs-vanilla/dynamic-adaptive/da(es6).js')
 	
 //- slideout--------------------------
 // var Slideout = require('./vendor/libs-vanilla/slideout/slideout.js')
@@ -144,6 +144,12 @@ require('./vendor/libs-vanilla/service-functions/all-functions.js')
 
 // require('./vendor/color-scheme-switcher.js')
 // require('./vendor/jquery-scrollify/jquery.scrollify.js')
+
+document.querySelector('.toggle-mnu').onclick = function(e) {
+	this.classList.toggle('on');
+	document.documentElement.classList.toggle('menu-opened');
+	document.documentElement.classList.toggle('lock');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 
