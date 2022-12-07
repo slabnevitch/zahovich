@@ -64,6 +64,11 @@ section{
 		padding-top: 70px;
 	}
 }
+button{
+	@media (any-hover: hover) { //только для устройств с ховером
+		cursor: pointer;
+	}
+}
 ul, li{
 	margin: 0;
 	padding: 0;

@@ -69,6 +69,7 @@
 		min-height: 50px;
 		display: grid;
 		grid-template-columns: 190px auto auto;
+		align-items: center;
 		column-gap: 15px;
 	}
 }
@@ -160,6 +161,11 @@
 		position: absolute;
 		top: 0;
 		right: -7px;
+		@include but-null;
+
+		@media (any-hover: hover) { //только для устройств с ховером
+			cursor: pointer;
+		}
 
 		&:before{
 		   display: none;
@@ -171,7 +177,7 @@
 		}
 	}
 	[data-single-dropdown]{
-		position: static !important;
+		position: static;
 		
 	}
 	.single-dropdown {
