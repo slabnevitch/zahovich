@@ -9,12 +9,12 @@ html, body{
 }
 body{
 	// font-family: $reg;
-	font-weight: normal;
+	// font-weight: normal;
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
-	line-height: 1.6;
-	-webkit-font-smoothing: antialiased;
+	// line-height: 1.6;
+	// -webkit-font-smoothing: antialiased;
 	overflow-x: hidden;
 	color: $text;
 
@@ -56,6 +56,7 @@ body{
 // END Прижать футер к низу
 
 button{
+	font-family: $userfont, sans-serif;
 	@media (any-hover: hover) { //только для устройств с ховером
 		cursor: pointer;
 	}

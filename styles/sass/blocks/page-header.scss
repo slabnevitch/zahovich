@@ -78,7 +78,7 @@
 	.wrapper{
 		min-height: 50px;
 		display: grid;
-		grid-template-columns: 190px auto auto;
+		grid-template-columns: 190px 1fr auto;
 		align-items: center;
 		column-gap: 15px;
 	}
@@ -93,8 +93,8 @@
 
 }
 .search-header {
-	@include adaptive-value('padding-left', 142, 0, 1);
-	@include adaptive-value('padding-right', 196, 0, 1);
+	@include adaptive-value('padding-left', 158, 0, 1);
+	@include adaptive-value('padding-right', 238, 0, 1);
 
 	@include max-screen($maxWidthContainer + px){
 		padding-left: 30px;
@@ -136,6 +136,7 @@
 	font-weight: 500;
 	@include placecolor(rgba(0, 0, 0, 0.5));
 	font-size: 18px;
+	font-family: $userfont;
 }
 .icon-search {}
 .header__mutations {
