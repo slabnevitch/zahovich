@@ -145,7 +145,7 @@ import tippy from 'tippy.js';
 // require('./vendor/color-scheme-switcher.js')
 // require('./vendor/jquery-scrollify/jquery.scrollify.js')
 
-document.querySelector('.toggle-mnu').onclick = function(e) {
+document.querySelector('#burger').onclick = function(e) {
 	this.classList.toggle('on');
 	document.documentElement.classList.toggle('menu-opened');
 	document.documentElement.classList.toggle('lock');
@@ -154,75 +154,52 @@ document.querySelector('.toggle-mnu').onclick = function(e) {
 document.addEventListener('DOMContentLoaded', () => {
 
 	//---------------Swiper
-if(document.querySelector('.main__slider') !== null){
-  const swiper = new Swiper('.main__slider', {
-  /*
-	effect: 'fade',
-	*/
-	autoplay: {
-		delay: 5000,
-		disableOnInteraction: false,
-	},
-	observer: true,
-	observeParents: true,
-	slidesPerView: 1,
-	spaceBetween: 10,
-	autoHeight: true,
-	//speed: 800,
-	//touchRatio: 0,
-	//simulateTouch: false,
-	//loop: true,
-	//preloadImages: false,
-	//lazy: true,
-  // direction: 'vertical',
-  loop: true,
-  breakpoints: {
+	if(document.querySelector('.main__slider') !== null){
+		const swiper = new Swiper('.main__slider', {
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 10,
+			autoHeight: true,
+
+			loop: true,
+			breakpoints: {
     // when window width is >= 320px
-    992: {
-    	autoHeight: false
-    },
-    // // when window width is >= 480px
-    // 480: {
-    // 	slidesPerView: 3,
-    // 	spaceBetween: 30
-    // },
-    // // when window width is >= 640px
-    // 640: {
-    // 	slidesPerView: 4,
-    // 	spaceBetween: 40
-    // }
-},
+				992: {
+					autoHeight: false
+				}
+			},
 
   // If we need pagination
-  pagination: {
-  	el: '.swiper-pagination',
-  	type: 'bullets',
-  	clickable: true,
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'bullets',
+				clickable: true,
 	//custom pagination
 	//type: 'custom',
 	//renderCustom: (swiper, current, total) => {
 		//return current.toString().length > 1 ? current : '0'+current;
 	//}
-  },
+			},
 
-  on: {
-    init: function (swiper) {
-    	document.querySelector('.swiper-pages__overal').innerText = `/${swiper.wrapperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length}`;
-    },
-    slideChange: function (swiper) {
-      console.log(swiper.activeIndex);
-      document.querySelector('.swiper-pages__current').innerText = `0${swiper.activeIndex}`;
-    },
-  },
+			on: {
+				init: function (swiper) {
+					document.querySelector('.swiper-pages__overal').innerText = `/${swiper.wrapperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length}`;
+				},
+				slideChange: function (swiper) {
+					console.log(swiper.activeIndex);
+					document.querySelector('.swiper-pages__current').innerText = swiper.realIndex < 10 ? `0${swiper.realIndex + 1}` : swiper.realIndex + 1;
+				},
+			},
 
-});
-}
+		});
+	}
 //---------------END Swiper
 
-tippy('[data-tippy-content]');//простой инит
-// new tippy('[data-tippy-content]', {
-// 	position: 'right',
-// 	trigger: 'click'
-// });
+tippy('[data-tippy-content]');
 
 }); //DOMContentLoaded
