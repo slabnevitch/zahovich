@@ -196,13 +196,13 @@ padding-bottom: 52.25%;
 
 @mixin toggle-mnu($color: #000, $point: $md, $top:15px, $right:30px){
 	.toggle-mnu{
-		position: fixed;
+		// position: fixed;
 		right: $right;
 		top: $top;
 	  display: block;
 	  width: 28px;
 	  height: 28px;
-	  // margin-top: 14px;
+	  margin-top: -7px;
 	  padding: 0;
 	  background-color: transparent;
 	  border: none;

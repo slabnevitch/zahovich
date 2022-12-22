@@ -167,7 +167,7 @@ if(document.querySelector('.main__slider') !== null){
 	observeParents: true,
 	slidesPerView: 1,
 	spaceBetween: 10,
-	//autoHeight: true,
+	autoHeight: true,
 	//speed: 800,
 	//touchRatio: 0,
 	//simulateTouch: false,
@@ -178,10 +178,9 @@ if(document.querySelector('.main__slider') !== null){
   loop: true,
   breakpoints: {
     // when window width is >= 320px
-    // 320: {
-    // 	slidesPerView: 2,
-    // 	spaceBetween: 20
-    // },
+    992: {
+    	autoHeight: false
+    },
     // // when window width is >= 480px
     // 480: {
     // 	slidesPerView: 3,
@@ -212,7 +211,7 @@ if(document.querySelector('.main__slider') !== null){
     },
     slideChange: function (swiper) {
       console.log(swiper.activeIndex);
-      document.querySelector('.swiper-pages__current').innerText = `0${swiper.activeIndex + 1}`;
+      document.querySelector('.swiper-pages__current').innerText = `0${swiper.activeIndex}`;
     },
   },
 

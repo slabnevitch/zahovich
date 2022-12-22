@@ -100,11 +100,19 @@
 }
 .swiper-container-horizontal .swiper-pagination-bullets .swiper-pagination-bullet{
   width: 18px;
-  height: 2px;
+  height: 20px;
   margin: 0 7.5px;
-  background-color: #fff;
   opacity: 1;
   position: relative;
+  background-color: transparent;
+
+  &:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    @include absolute-center;
+  background-color: #fff;
+  }
 
   &:before{
     width: 10px;
@@ -115,16 +123,22 @@
     border-radius: 50%;
     position: absolute;
     left: -5px;
-    top: 50%;
+     top: 50%;
     margin-top: -5px;
-    display: none;
+   opacity: 0;
+    
   }
 
 }
 .swiper-container-horizontal .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
-  background-color: $accent;
+  &:after{
+
+    background-color: $accent;
+  }
   &:before{
-    display: block;
+    opacity: 1;
+    transition: left 5s linear;
+    left: calc(100% - 5px);
   }
 }
 /*--------------------END ui----------------------*/ 
