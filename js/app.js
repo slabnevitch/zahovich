@@ -118,7 +118,7 @@ require('./vendor/libs-vanilla/dynamic-adaptive/da(es6).js')
 //- tippy--------------------------
 //- https://atomiks.github.io/tippyjs/
 //- base using:  html: <button data-tippy-content="Tooltip">Text</button>; js: tippy('[data-tippy-content]');
-// import tippy from 'tippy.js';
+import tippy from 'tippy.js';
 
 //- sticky-sidebar -------------------------- Не проверено!
 //- https://abouolia.github.io/sticky-sidebar/#usage
@@ -218,5 +218,11 @@ if(document.querySelector('.main__slider') !== null){
 });
 }
 //---------------END Swiper
+
+tippy('[data-tippy-content]');//простой инит
+// new tippy('[data-tippy-content]', {
+// 	position: 'right',
+// 	trigger: 'click'
+// });
 
 }); //DOMContentLoaded
