@@ -6,8 +6,8 @@
 // // Import vendor jQuery plugin example (not module)
 // import Parallax from 'parallax-js'
 
-// import Swiper, { Navigation, Mousewheel } from 'swiper';
-// Swiper.use([Navigation, Mousewheel]);
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay]);
 
 // import FormHandler from 'formhandler.js';
 
@@ -152,5 +152,72 @@ document.querySelector('.toggle-mnu').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	//---------------Swiper
+if(document.querySelector('.main__slider') !== null){
+  const swiper = new Swiper('.main__slider', {
+  /*
+	effect: 'fade',
+	*/
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false,
+	},
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	spaceBetween: 10,
+	//autoHeight: true,
+	//speed: 800,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	//loop: true,
+	//preloadImages: false,
+	//lazy: true,
+  // direction: 'vertical',
+  loop: true,
+  breakpoints: {
+    // when window width is >= 320px
+    // 320: {
+    // 	slidesPerView: 2,
+    // 	spaceBetween: 20
+    // },
+    // // when window width is >= 480px
+    // 480: {
+    // 	slidesPerView: 3,
+    // 	spaceBetween: 30
+    // },
+    // // when window width is >= 640px
+    // 640: {
+    // 	slidesPerView: 4,
+    // 	spaceBetween: 40
+    // }
+},
+
+  // If we need pagination
+  pagination: {
+  	el: '.swiper-pagination',
+  	type: 'bullets',
+  	clickable: true,
+	//custom pagination
+	//type: 'custom',
+	//renderCustom: (swiper, current, total) => {
+		//return current.toString().length > 1 ? current : '0'+current;
+	//}
+  },
+
+  on: {
+    init: function (swiper) {
+    	document.querySelector('.swiper-pages__overal').innerText = `/${swiper.wrapperEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length}`;
+    },
+    slideChange: function (swiper) {
+      console.log(swiper.activeIndex);
+      document.querySelector('.swiper-pages__current').innerText = `0${swiper.activeIndex + 1}`;
+    },
+  },
+
+});
+}
+//---------------END Swiper
 
 }); //DOMContentLoaded

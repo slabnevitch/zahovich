@@ -5,16 +5,26 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow-x: hidden;
 }
 .main__top {
 }
 .main__container{
-	display: grid;
-	grid-template-columns: auto prc(447,1587);
-	grid-column-gap: 134px;
-
+	@include min-screen($md){
+		display: grid;
+		grid-template-columns: auto prc(447,1587);
+		@include adaptive-value('grid-column-gap', 134, 0, 1);
+		grid-column-gap: 134px;
+		
+	}
 }
-.main__swiper {}
+.main__swiper {
+	min-width: 0;
+
+	.swiper-pagination{
+		text-align: left;
+	}
+}
 .swiper {}
 .main__slider {}
 .swiper-wrapper {}
@@ -52,10 +62,102 @@
 .btn {}
 .swiper-pagination {}
 .main__pict {
-	padding-bottom: prc(499,447);
 
 }
-.pict-main {}
+.pict-main {
+	align-self: center;
+	padding-top: 35px;
+	// padding-bottom: prc(499,447);
+	max-width: 448px;
+	position: relative;
+
+	&:before{
+		content: '';
+		position: absolute;
+		width: prc(420, 448);
+		left: prc(129,420);
+		// top: 86px;
+		top: prc(70, 420);
+		// height: prc(420, 448);
+		padding-bottom: 94%;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		z-index: 0;
+	}
+
+}
 .pict-main__img {
+	position: relative;
+	max-width: 100%;
+	max-height: 499px;
+	z-index: 2;
+}
+.pict-main__mark{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+		background-color: rgba($accent, .4);
+	color: #fff;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 34px;
+	border-radius: 50%;
+
+	&:first-of-type{
+		top: prc(170, 420);
+		left: prc(57, 420);
+	}
+
+	&:nth-child(2){
+		top: prc(60, 420);
+		left: prc(350, 420);
+	}
+	&:nth-child(3){
+		top: prc(300, 420);
+		left: prc(345, 420);
+	}
+
+	
+
+	&:before{
+		@include absolute-center;
+		content: '';
+		width: 20px;
+		height: 20px;
+		background-color: $accent;
+		border-radius: inherit;
+		z-index: 0;
+	}
+
+	span{
+		position: relative;
+		z-index: 2;
+	}
+
+}
+.main__fractions {
+	display: flex;
+	align-items: center;
+}
+.swiper-pagination {}
+.swiper-pages {
+	margin-left: 32px;
+	display: flex;
+	align-items: flex-end;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 46px;
+	letter-spacing: 0.1em;
+
+	color: #E8AA31;
+}
+.swiper-pages__current {
+}
+.swiper-pages__overal {
+	font-size: 18px;
+	color: #fff;
 }
 .main__bottom {}

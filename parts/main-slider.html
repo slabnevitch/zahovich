@@ -2,9 +2,9 @@
   <div class="main__top">
     <div class="wrapper main__container">
       <div class="main__swiper">
-          <div class="swiper">
+          <div class="swiper main__slider swiper-container">
             <!-- Additional required wrapper -->
-            <div class="main__slider swiper-wrapper swiper-container">
+            <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide main__slide">
                  <div class="main__text">
@@ -18,14 +18,24 @@
               <div class="swiper-slide">Slide 3</div>
             </div>
             <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="main__fractions">
+              <div class="swiper-pagination"></div>
+              <div class="swiper-pages">
+                <div class="swiper-pages__current">01</div>
+                <div class="swiper-pages__overal">01</div>
+              </div>
+              
+            </div>
           </div>
           
         </div>
       
           
-        <div class="main__pict pict-main _fit">
-          <img src="images/dist/main-section/knifes.png" alt="alt" class="pict-main__img _fit-img">
+        <div class="main__pict pict-main">
+          <div class="pict-main__mark"><span>+</span></div>
+          <div class="pict-main__mark"><span>+</span></div>
+          <div class="pict-main__mark"><span>+</span></div>
+          <img src="images/dist/main-section/knifes.png" alt="alt" class="pict-main__img">
         </div>
       </div>
   </div>
