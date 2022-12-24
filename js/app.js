@@ -145,8 +145,8 @@ import tippy from 'tippy.js';
 // require('./vendor/color-scheme-switcher.js')
 // require('./vendor/jquery-scrollify/jquery.scrollify.js')
 
-document.querySelector('#burger').onclick = function(e) {
-	this.classList.toggle('on');
+document.querySelector('#multilevel-panel-open').onclick = function(e) {
+	// this.classList.toggle('on');
 	document.documentElement.classList.toggle('menu-opened');
 	document.documentElement.classList.toggle('lock');
 }
@@ -155,18 +155,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.onclick = function(e) {
 		var target = e.target;
-		console.log(target)
-		console.log(target.parentElement)
+
 		// desktop catalog toggle
-		if(target.classList.contains('catalog-menu__item') || target.parentElement.classList.contains('catalog-menu__item')){
-			if(target.parentElement.classList.contains('with-submenu')){
-				e.preventDefault();
-				document.querySelector('.catalog').classList.toggle('catalog-opened');
-				target.parentElement.classList.toggle('catalog-item-opened');
+		if(screen.width >= 991){
+			if(target.classList.contains('catalog-menu__item') || target.parentElement.classList.contains('catalog-menu__item')){
+				if(target.parentElement.classList.contains('with-submenu')){
+					e.preventDefault();
+					document.querySelector('.catalog').classList.toggle('catalog-opened');
+					target.parentElement.classList.toggle('catalog-item-opened');
+				}
+			}else{
+				document.querySelector('.catalog').classList.remove('catalog-opened');
+				target.parentElement.classList.remove('catalog-item-opened');
+
 			}
-		}else{
-			document.querySelector('.catalog').classList.remove('catalog-opened');
-			target.parentElement.classList.remove('catalog-item-opened');
 
 		}
 		//END desktop catalog toggle
@@ -185,14 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 10,
-			autoHeight: true,
+			// autoHeight: true,
 
 			loop: true,
 			breakpoints: {
     // when window width is >= 320px
-				992: {
-					autoHeight: false
-				}
+				// 992: {
+				// 	autoHeight: false
+				// }
 			},
 
   // If we need pagination
@@ -200,11 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				el: '.swiper-pagination',
 				type: 'bullets',
 				clickable: true,
-	//custom pagination
-	//type: 'custom',
-	//renderCustom: (swiper, current, total) => {
-		//return current.toString().length > 1 ? current : '0'+current;
-	//}
 			},
 
 			on: {

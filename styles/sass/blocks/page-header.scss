@@ -17,20 +17,30 @@
 		grid-template-columns:1fr auto;
 		min-height: 50px;
 		align-content: center;
+
+		& > .toggle-mnu{
+			.multilevel-panel-opened &{
+				display: none;
+			} 
+		}
 	}
 
 }
 .header__menu {}
 .menu-header {
 	.menu {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		grid-row-gap: 5px;
-		@include adaptive-value('column-gap', 60, 5, 1);
 
-		@include max-screen($md){
-			display: none;
+		@include max-screen($multilevelPoint){
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		@include min-screen($multilevelPoint){
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			grid-row-gap: 5px;
+			@include adaptive-value('column-gap', 60, 5, 1);
+			
 		}
 		.menu__link {
 			font-weight: 500;
@@ -348,4 +358,13 @@ line-height: 20px;
 .header__bottom{
 	position: relative;
 	background: $text;
+}
+.multilevel-panel .multilevel-menu{
+	padding-left: 20px;
+	padding-right: 20px;
+
+.multilevel-panel .multilevel-menu li{
+		border-bottom: none;
+	@include max-screen($multilevelPoint){
+	}
 }
