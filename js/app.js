@@ -69,7 +69,7 @@ require('./vendor/libs-vanilla/dynamic-adaptive/da(es6).js')
 // var Slideout = require('./vendor/libs-vanilla/slideout/slideout.js')
 
 //- multilevel-panel--------------------------Не проверено!
-// require('./vendor/libs-vanilla/multilevel-panel/multilevel-panel.js')
+require('./vendor/libs-vanilla/multilevel-panel/multilevel-panel.js')
 
 //- multilevel-dropdown-menu--------------------------
 // require('./vendor/libs-vanilla/multilevel-dropdown/multidropdown.js')
