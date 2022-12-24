@@ -348,16 +348,4 @@ line-height: 20px;
 .header__bottom{
 	position: relative;
 	background: $text;
-
-	// &:before, &:after{
-	// 		content: '';
-	// 		position: absolute;
-	// 		background-color: $text;
-	// 		height: 100%;
-	// 		top: 0;
-	// 	}
-	// 	&:before{
-	// 		left: 0;
-	// 		width: calc((100% - 1587px)/2);
-	// 	}
 }
