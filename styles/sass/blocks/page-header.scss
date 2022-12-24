@@ -1,4 +1,13 @@
-.header {}
+.header {
+	.multilevel-panel{
+		.multilevel-menu{
+			@include min-screen($md){
+				display: none;
+			}
+
+		}
+	}
+}
 .header__top {
 	padding: 10px 0;
 	background-color: $text;
@@ -335,4 +344,20 @@ line-height: 20px;
 				text-decoration: underline;
 			}
 		}
+}
+.header__bottom{
+	position: relative;
+	background: $text;
+
+	// &:before, &:after{
+	// 		content: '';
+	// 		position: absolute;
+	// 		background-color: $text;
+	// 		height: 100%;
+	// 		top: 0;
+	// 	}
+	// 	&:before{
+	// 		left: 0;
+	// 		width: calc((100% - 1587px)/2);
+	// 	}
 }

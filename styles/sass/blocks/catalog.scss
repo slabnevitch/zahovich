@@ -1,0 +1,65 @@
+.catalog {
+	// position: relative;
+}
+.catalog-menu {
+	display: flex;
+	align-items: center;
+
+	li{
+		list-style-type: none;
+		flex: 1 1 auto;
+	}
+	a{
+		text-decoration: none;
+		color: #fff;
+	}
+}
+.catalog-menu__item {
+	& > .catalog-submenu{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		padding: 0 calc((100% - 1587px)/2);
+		top: 100%;
+		display: grid;
+		grid-template-columns: repeat(5,1fr);
+		grid-column-gap: 15px;
+		background-color: $text;
+		z-index: 10;
+
+		
+		// &:after{
+		// 	content: '';
+		// }
+	}
+}
+.catalog-menu__link {
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+	padding: 24px 0;
+
+	@media (any-hover: hover) { //только для устройств с ховером
+		&:hover{
+			color: $accent;
+			border-bottom-color: $accent;
+
+
+		}
+	}
+
+
+
+
+	// &:hover, &:active{
+	// 	.with-submenu {
+	// 		ul{
+	// 			display: block;
+	// 		}
+	// 	}
+		
+	// }
+	
+
+}
+.catalog-submenu__item {}
+.catalog-submenu__link {}

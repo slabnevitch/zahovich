@@ -153,6 +153,18 @@ document.querySelector('#burger').onclick = function(e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+	document.onclick = function(e) {
+		var target = e.target;
+		console.log(target)
+		// desktop catalog toggle
+		if(target.classList.contains('catalog-menu__item') || target.closest('.catalog-menu__item')){
+			alert('pizduk!')
+		}
+		//END desktop catalog toggle
+
+	}
+
+
 	//---------------Swiper
 	if(document.querySelector('.main__slider') !== null){
 		const swiper = new Swiper('.main__slider', {
