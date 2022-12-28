@@ -237,40 +237,26 @@ document.addEventListener('DOMContentLoaded', () => {
 				slideChange: function (swiper) {
 					console.log(swiper.activeIndex);
 					document.querySelector('.swiper-pages__current').innerText = swiper.realIndex < 10 ? `0${swiper.realIndex + 1}` : swiper.realIndex + 1;
-				},
+				}
 			},
 
+		});
+
+		mainSwiper.on('slideChange', function (swiper) {
+			bannerSwiper.slideTo(swiper.activeIndex, 0, false);
 		});
 	}
 
 
 	if(document.querySelector('.banners-slider') !== null){
-		const bannerSwiper = new Swiper('.banners-slider', {
+		var bannerSwiper = new Swiper('.banners-slider', {
 
 			effect: 'fade',
 			fadeEffect: {
 			    crossFade: true
 			  },
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-			thumbs: {
-				swiper:mainSwiper
-			},
 			observer: true,
 			observeParents: true,
-	//freeMode: true,// в сочетании с mousewheel дает возможность прокручивать стр-цу. после докручивания слайдера до начала или конца колесом мыши
-			slidesPerView: 1,
-	//spaceBetween: 0,
-	//autoHeight: true,
-	//speed: 800,
-	//touchRatio: 0,
-	//simulateTouch: false,
-	//loop: true,
-	//preloadImages: false,
-	//lazy: true,
-  // direction: 'vertical',
 			loop: true
 
 		});

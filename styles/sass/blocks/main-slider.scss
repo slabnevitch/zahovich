@@ -98,7 +98,7 @@
 
 }
 .pict-main__img {
-	position: relative;
+	@include absolute-center;
 	max-width: 100%;
 	max-height: 499px;
 	z-index: 2;
