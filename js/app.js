@@ -6,8 +6,8 @@
 // // Import vendor jQuery plugin example (not module)
 // import Parallax from 'parallax-js'
 
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
-Swiper.use([Navigation, Pagination, Autoplay]);
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade} from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 // import FormHandler from 'formhandler.js';
 
@@ -203,9 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 
-	//---------------Swiper
 	if(document.querySelector('.main__slider') !== null){
-		const swiper = new Swiper('.main__slider', {
+		var mainSwiper = new Swiper('.main__slider', {
 			autoplay: {
 				delay: 5000,
 				disableOnInteraction: false,
@@ -243,6 +242,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		});
 	}
+
+
+	if(document.querySelector('.banners-slider') !== null){
+		const bannerSwiper = new Swiper('.banners-slider', {
+
+			effect: 'fade',
+			fadeEffect: {
+			    crossFade: true
+			  },
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			thumbs: {
+				swiper:mainSwiper
+			},
+			observer: true,
+			observeParents: true,
+	//freeMode: true,// в сочетании с mousewheel дает возможность прокручивать стр-цу. после докручивания слайдера до начала или конца колесом мыши
+			slidesPerView: 1,
+	//spaceBetween: 0,
+	//autoHeight: true,
+	//speed: 800,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	//loop: true,
+	//preloadImages: false,
+	//lazy: true,
+  // direction: 'vertical',
+			loop: true
+
+		});
+	}
+
 //---------------END Swiper
 
 tippy('[data-tippy-content]');
