@@ -72,8 +72,10 @@
 .pict-main {
 	align-self: center;
 	padding-top: 35px;
-	// padding-bottom: prc(499,447);
+	padding-bottom: prc(499,447);
+	// padding-bottom: prc(447, 499);
 	max-width: 448px;
+	height: 0;
 	position: relative;
 
 	&:before{

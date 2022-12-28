@@ -42,6 +42,13 @@
 			@include adaptive-value('column-gap', 60, 5, 1);
 			
 		}
+		.menu__item {
+			@include max-screen($multilevelPoint){
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+
+		}
 		.menu__link {
 			font-weight: 500;
 			font-size: 16px;
@@ -71,7 +78,7 @@
 
 
 	&:before{
-		content: '\e90b';
+		content: '\e90a';
 		font-family: icomoon !important;
 	    speak: never;
 	    font-style: normal;
@@ -362,9 +369,10 @@ line-height: 20px;
 .multilevel-panel .multilevel-menu{
 	padding-left: 20px;
 	padding-right: 20px;
+}
 
 .multilevel-panel .multilevel-menu li{
-		border-bottom: none;
 	@include max-screen($multilevelPoint){
+		border-bottom: none;
 	}
 }

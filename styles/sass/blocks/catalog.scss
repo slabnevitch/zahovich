@@ -27,14 +27,7 @@
 		background-color: $text;
 		transition: all .3s;
 
-		.catalog-opened &{
-			visibility: visible;
-			opacity: 1;
-		}
 
-		@include max-screen($maxWidthContainer + 'px'){
-			padding: 0 15px;
-		}
 		@include min-screen($multilevelPoint){
 			padding: 0 calc((100% - 1587px)/2);
 			display: grid;
@@ -45,7 +38,31 @@
 			opacity: 0;
 			
 		}
+		@include max-screen($maxWidthContainer + 'px'){
+			padding: 0 15px;
+		}
 
+		&--imaged{
+			@include min-screen($multilevelPoint){
+				grid-template-columns: repeat(6,1fr);
+				grid-column-gap: 15px;
+			}
+
+			.catalog-submenu__item {
+				padding-top: 30px;
+				&:before{
+					display: none;
+				}
+				& > .catalog-submenu__link{
+					padding: 0;
+				}
+			}
+		}
+
+	}
+	&.catalog-item-opened > .catalog-submenu{
+		visibility: visible;
+		opacity: 1;
 	}
 }
 .catalog-menu__link {
@@ -180,4 +197,18 @@
 .catalog-menu .catalog__view-link{
 	color: $accent;
 
+}
+.catalog-submenu__item--imaged {}
+.catalog-submenu__link {}
+.catalog-submenu__image {
+	width: 100px;
+	height: 105px;
+	position: relative;
+
+	@include max-screen($multilevelPoint){
+		display: none;
+	}
+}
+.catalog-submenu__pict {
+	@include absolute-center();
 }

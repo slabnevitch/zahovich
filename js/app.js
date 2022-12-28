@@ -18,7 +18,7 @@ Swiper.use([Navigation, Pagination, Autoplay]);
 //- require('./vendor/libs-vanilla/service-functions/remove-class.js')
 
 //- siblings--------------------------
-//- require('./vendor/libs-vanilla/service-functions/siblings.js')
+// require('./vendor/libs-vanilla/service-functions/siblings.js')
 
 //- webp-detection--------------------------
 // require('./vendor/libs-vanilla/service-functions/webp-detection.js')
@@ -145,6 +145,30 @@ import tippy from 'tippy.js';
 // require('./vendor/color-scheme-switcher.js')
 // require('./vendor/jquery-scrollify/jquery.scrollify.js')
 
+var isMobile = {
+	Android:        function() { return navigator.userAgent.match(/Android/i) ? true : false; },
+	BlackBerry:     function() { return navigator.userAgent.match(/BlackBerry/i) ? true : false; },
+	iOS:            function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false; },
+	Windows:        function() { return navigator.userAgent.match(/IEMobile/i) ? true : false; },
+	any:            function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  }
+};
+// Use: if(isMobile.any()){ some code here }
+
+function siblings( elem ) {
+	var createSiblings = function( n, elem ) {
+		var matched = [];
+
+		for ( ; n; n = n.nextSibling ) {
+			if ( n.nodeType === 1 && n !== elem ) {
+				matched.push( n );
+			}
+		}
+
+		return matched;
+	};
+	return createSiblings( ( elem.parentNode || {} ).firstChild, elem );
+}
+
 document.querySelector('#multilevel-panel-open').onclick = function(e) {
 	// this.classList.toggle('on');
 	document.documentElement.classList.toggle('menu-opened');
@@ -152,6 +176,7 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	console.log(isMobile)
 
 	document.onclick = function(e) {
 		var target = e.target;
@@ -163,10 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
 					e.preventDefault();
 					document.querySelector('.catalog').classList.toggle('catalog-opened');
 					target.parentElement.classList.toggle('catalog-item-opened');
+					siblings(target.parentElement).forEach(item => item.classList.remove('catalog-item-opened'));
+					// classList.toggle('catalog-item-opened');
 				}
 			}else{
 				document.querySelector('.catalog').classList.remove('catalog-opened');
-				target.parentElement.classList.remove('catalog-item-opened');
+				document.querySelectorAll('.catalog-menu__item').forEach(item => item.classList.remove('catalog-item-opened'));
 
 			}
 
@@ -187,14 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 10,
-			// autoHeight: true,
+			autoHeight: true,
 
 			loop: true,
 			breakpoints: {
     // when window width is >= 320px
-				// 992: {
-				// 	autoHeight: false
-				// }
+				992: {
+					autoHeight: false
+				}
 			},
 
   // If we need pagination
