@@ -141,4 +141,16 @@
     left: calc(100% - 5px);
   }
 }
+.swiper-container-horizontal.invert .swiper-pagination-bullets .swiper-pagination-bullet{
+  &:after{
+
+   background-color:#898989;
+  }
+}
+.swiper-container-horizontal .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  &:after{
+    background-color: $accent;
+  }
+}
+
 /*--------------------END ui----------------------*/ 

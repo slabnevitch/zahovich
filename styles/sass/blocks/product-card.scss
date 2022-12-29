@@ -1,8 +1,6 @@
 .product-card {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	max-width: 375px;
 	padding: 20px 20px 29px 30px;
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 	background-color: #fff;
@@ -31,13 +29,12 @@
 .product-card__info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-	margin-bottom: 5px;
+	grid-column-gap: 10px;
+	margin-bottom: 11px;
 }
 .product-card__feature {
 	font-weight: 600;
 	font-size: 16px;
-	line-height: 34px;
 	color: #ABABAB;
 }
 .product-card__glory {

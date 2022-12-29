@@ -261,6 +261,45 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	//---------------Swiper
+	if(document.querySelector('.products-carousel') !== null){
+		const productsSwiper = new Swiper('.products-carousel', {
+			observer: true,
+			observeParents: true,
+
+			slidesPerView: 1,
+			//spaceBetween: 0,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			loop: true,
+			spaceBetween: 30,
+
+			breakpoints: {
+    // when window width is >= 320px
+
+				700: {
+					slidesPerView: 2
+				},
+				991: {
+					slidesPerView: 3
+				},
+				1366: {
+					slidesPerView: 4
+				}
+			},
+
+  // If we need pagination
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'bullets',
+				clickable: true
+			}
+		});
+	}
+
+
 //---------------END Swiper
 
 tippy('[data-tippy-content]');
