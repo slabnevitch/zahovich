@@ -1,4 +1,4 @@
-@mixin star-rating($ratingStarWidth: 10px, $ratingStarGap: 5px) {
+@mixin star-rating($ratingStarWidth: 10px, $ratingStarGap: 5px, $color: gold) {
 //статичный звезный рейтинг без возможности выбора полтзователем
 // $ratingStarWidth - ширина и высота отдельной звезды (передавать в миксин в px!!)
 // $ratingStarGap - расстояние м/у звездами (передавать в миксин в px!!)	
@@ -28,7 +28,7 @@
     }
     &.active{
       &:before{
-        color: gold;
+        color: $color;
         // для использования с кастомной иконкой вместо шрифтового символа
      //  	color: transparent;
      //  	background-image: url(https://lh5.googleusercontent.com/-DZ5jyR2NRfk/AAAAAAAAAAI/AAAAAAAAACk/I8BNLS9vfCs/photo.jpg?sz=50);
@@ -160,7 +160,7 @@
 		}
 }
 .star-rating{
-	@include star-rating(50px, 10px);
+	@include star-rating(22px, 10px, $accent);
 }
 .simple-rating{
 	@include simple-rating(50px, 0px);

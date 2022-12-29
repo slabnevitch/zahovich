@@ -145,13 +145,13 @@ import tippy from 'tippy.js';
 // require('./vendor/color-scheme-switcher.js')
 // require('./vendor/jquery-scrollify/jquery.scrollify.js')
 
-var isMobile = {
-	Android:        function() { return navigator.userAgent.match(/Android/i) ? true : false; },
-	BlackBerry:     function() { return navigator.userAgent.match(/BlackBerry/i) ? true : false; },
-	iOS:            function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false; },
-	Windows:        function() { return navigator.userAgent.match(/IEMobile/i) ? true : false; },
-	any:            function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  }
-};
+// var isMobile = {
+// 	Android:        function() { return navigator.userAgent.match(/Android/i) ? true : false; },
+// 	BlackBerry:     function() { return navigator.userAgent.match(/BlackBerry/i) ? true : false; },
+// 	iOS:            function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false; },
+// 	Windows:        function() { return navigator.userAgent.match(/IEMobile/i) ? true : false; },
+// 	any:            function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  }
+// };
 // Use: if(isMobile.any()){ some code here }
 
 function siblings( elem ) {
@@ -176,7 +176,6 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	console.log(isMobile)
 
 	document.onclick = function(e) {
 		var target = e.target;

@@ -1,0 +1,123 @@
+.features {
+	@include adaptive-value('padding-top', 100, 60, 1);
+	@include adaptive-value('padding-bottom', 60, 25, 1);
+}
+.wrapper {}
+.features__items {
+		display: grid;
+	grid-row-gap: 32px;
+	@include min-screen(600px){
+		grid-template-columns: repeat(auto-fill, minmax(calc((800px - 28px)/2), 1fr));
+		grid-column-gap: 28px;
+		
+	}
+}
+.features__item {
+}
+.item-features {
+	padding: 30px 30px 0 30px;
+
+	position: relative;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+	background-color: #fff;
+	text-decoration: none;
+	overflow: hidden;
+	color: $text;
+
+	@media (any-hover: hover) { //только для устройств с ховером
+			&:hover{
+				color: $text;
+				
+				.item-features__title {
+					&:after{
+						width: 100%;
+					}
+				}
+			}
+		}
+
+	@include min-screen(600px){
+		min-height: 293px;
+	}
+}
+.item-features__title {
+	position: relative;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	font-weight: 600;
+font-size: 24px;
+line-height: 34px;
+z-index: 2;
+
+	&:after{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transition: width 1s;
+		width: 68px;
+		height: 2px;
+		background-color: $accent;	
+
+		@include max-screen(600px){
+			right: 0;
+			margin: auto;
+		}
+	}
+
+	@include max-screen(600px){
+		text-align: center;
+		display: block;
+	}
+}
+.item-features__text {
+	position: relative;
+	z-index: 2;
+}
+.item-features__list {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 62px;
+
+}
+.item-features__item {
+	list-style-type: none;
+	font-weight: 500;
+font-size: 18px;
+line-height: 34px;
+	position: relative;
+	&:before{
+		content: '';
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		vertical-align: middle;
+		margin-right: 15px;
+		background-color: $accent;
+	}
+
+
+}
+.item-features__image {
+	max-width: 100%;
+	@include min-screen(600px){
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		
+	}
+}
+.item-features__img {
+	max-width: 100%;
+	@include min-screen(600px){
+		max-width: none;
+		height: 90%;
+		position: absolute;
+		bottom: -5px;right: -10px;
+		// vertical-align:top;
+	}
+}

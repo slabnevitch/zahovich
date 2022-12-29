@@ -66,7 +66,7 @@ function addClass(elSelector, classToRemove) {
 // 		removeClass('.menu__item', 'touch-hover');//удаляем у всех пунктов меню активный класс
 // 	}
 // }
-(function() {
+// (function() {
 	var singleDropdown = function(opts) {
 		// var arrows = document.querySelectorAll('[data-single-dropdown]')
 		// 		.querySelectorAll('.menu__arrow');
@@ -99,5 +99,5 @@ function addClass(elSelector, classToRemove) {
 		singleDropdown();
 	}
 	
-})();
+// })();
 // КОНЕЦ Открытие и закрытие выпадающих меню на тач-устройствах(single-dropdown)
