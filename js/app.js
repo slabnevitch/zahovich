@@ -171,7 +171,6 @@ function siblings( elem ) {
 
 document.querySelector('#multilevel-panel-open').onclick = function(e) {
 	// this.classList.toggle('on');
-	document.documentElement.classList.toggle('menu-opened');
 	document.documentElement.classList.toggle('lock');
 }
 
@@ -267,25 +266,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			observer: true,
 			observeParents: true,
 
-			slidesPerView: 1,
+			slidesPerView: 1.05,
 			//spaceBetween: 0,
 			autoplay: {
 				delay: 4000,
 				disableOnInteraction: false,
 			},
 			loop: true,
-			spaceBetween: 30,
+			spaceBetween: 15,
 
 			breakpoints: {
     // when window width is >= 320px
 
 				700: {
-					slidesPerView: 2
+					slidesPerView: 2,
+					spaceBetween: 30
 				},
 				991: {
+					spaceBetween: 30,
 					slidesPerView: 3
 				},
 				1366: {
+					spaceBetween: 30,
 					slidesPerView: 4
 				}
 			},
