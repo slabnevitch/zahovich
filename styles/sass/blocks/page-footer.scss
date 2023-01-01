@@ -1,3 +1,92 @@
 .footer {
+	padding-bottom: 49px;
+	background-color: $text;
+	color: #fff;
 
+	@include min-screen($xss){
+		
+	padding-top: 67px;
+	}
 }
+.wrapper {}
+.footer__row {
+	padding-top: 35px;
+	padding-bottom: 30px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	@include adaptive-value('grid-column-gap', 70, 0, 1);
+	grid-row-gap: 60px;
+
+	@include max-screen($xs){
+		padding-top: 60px;
+	}
+
+	@include min-screen($sm){
+		
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	}
+}
+.footer__column {
+	@include max-screen($xsss){
+		text-align: center;
+	}
+}
+.footer__tilte {
+	margin-bottom: 23px;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	color: #FFFFFF;
+}
+.footer__menu {}
+.menu-footer {}
+.menu-footer__item {
+	list-style-type: none;
+
+
+	&:not(:last-child){
+		margin-bottom: 20px;
+	}
+}
+.menu-footer__link {
+	// font-weight: 500;
+font-size: 18px;
+line-height: 27px;
+/* or 150% */
+text-decoration: none;
+color: rgba(255, 255, 255, 0.8);
+	@media (any-hover: hover) { //только для устройств с ховером
+			justify-content: center;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+}
+.footer__contacts {}
+.contacts-footer {}
+.contacts-footer__item {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	/* or 150% */
+	color: rgba(255, 255, 255, 0.8);
+}
+.icon-phone {}
+.icon-clock {}
+.icon-loc {}
+.icon-message {}
+.footer__text {}
+.footer__link {}
+.footer__form {}
+.form {}
+.footer__input {}
+.btn {}
+.icon-chev-down {}
+.form__custom-policy {}
+.form__custom {}
+.form__check {}
+.abs-form__custom-chek {}
+.form__policy {}
+.footer__bottom {}
+.footer__notation {}
+.footer__copyright {}
