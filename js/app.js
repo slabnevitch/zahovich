@@ -262,47 +262,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//---------------Swiper
 	if(document.querySelector('.products-carousel') !== null){
-		const productsSwiper = new Swiper('.products-carousel', {
-			observer: true,
-			observeParents: true,
+			new Swiper('.products-carousel', {
+				observer: true,
+				observeParents: true,
 
-			slidesPerView: 1.05,
-			//spaceBetween: 0,
-			autoplay: {
-				delay: 4000,
-				disableOnInteraction: false,
-			},
-			loop: true,
-			spaceBetween: 15,
-
-			breakpoints: {
-    // when window width is >= 320px
-
-				700: {
-					slidesPerView: 2,
-					spaceBetween: 30
+				slidesPerView: 1.05,
+				//spaceBetween: 0,
+				autoplay: {
+					delay: 4000,
+					disableOnInteraction: false,
 				},
-				991: {
-					spaceBetween: 30,
-					slidesPerView: 3
+				loop: true,
+				spaceBetween: 15,
+
+				breakpoints: {
+	    // when window width is >= 320px
+
+					700: {
+						slidesPerView: 2,
+						spaceBetween: 30
+					},
+					991: {
+						spaceBetween: 30,
+						slidesPerView: 3
+					},
+					1366: {
+						spaceBetween: 30,
+						slidesPerView: 4
+					}
 				},
-				1366: {
-					spaceBetween: 30,
-					slidesPerView: 4
+
+	  // If we need pagination
+				pagination: {
+					el: '.swiper-pagination',
+					type: 'bullets',
+					clickable: true
 				}
-			},
-
-  // If we need pagination
-			pagination: {
-				el: '.swiper-pagination',
-				type: 'bullets',
-				clickable: true
-			}
-		});
+			});
 	}
 
 	if(document.querySelector('.novelties-swiper') !== null){
-		const productsSwiper = new Swiper('.novelties-swiper', {
+		new Swiper('.novelties-swiper', {
 			observer: true,
 			observeParents: true,
 
