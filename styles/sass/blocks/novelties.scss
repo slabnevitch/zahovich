@@ -1,4 +1,5 @@
 .novelties {
+	position: relative;
 	padding-bottom: 46px;
 	margin-bottom: 60px;
 	background-color: rgba(0,0,0,.8);
@@ -6,6 +7,21 @@
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
+
+    &:before{
+    	content: '';
+    	display: block;
+    	width: calc(50% + 51px);
+    	height: 44px;
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	background-color: #fff;
+
+    	@include max-screen(1100px){
+    		display: none;
+    	}
+    }
 
 	.wrapper {
 		@include min-screen(1100px){
@@ -17,7 +33,7 @@
 	}
 }
 .novelties__content {
-	@include adaptive-value('padding-top', 18, 30, 1);
+	@include adaptive-value('padding-top', 62, 30, 1);
 	color: #fff;
 	.arrowed-link {
 		color: $accent;

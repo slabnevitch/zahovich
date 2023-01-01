@@ -23,6 +23,7 @@
 
 	.swiper-pagination{
 		text-align: left;
+		margin-top: 0;
 	}
 }
 .swiper {}
@@ -164,13 +165,17 @@
 }
 .main__fractions {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 
 	@include max-screen($xsss){
 		display: none;
 	}
 	.swiper-pagination {
 		position: static;
+
+		.swiper-pagination-bullet{
+			vertical-align: bottom;
+		}
 	}
 }
 .swiper-pages {
