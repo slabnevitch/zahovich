@@ -350,6 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 tippy('[data-tippy-content]');
 
+document.querySelector('.footer__form').onsubmit = () => console.log('submiy!')
 if(document.querySelector('.formhandler') != null){
 	const formhandler = new FormHandler({
 		fields: {
@@ -358,6 +359,7 @@ if(document.querySelector('.formhandler') != null){
 				notice: {
 					message: 'Нужен правильный емейл адрес',
 		      		 appendTo: '.field-notice',
+		      		 nextToField: false
 				}
 			},
 			checkbox: {
@@ -365,12 +367,26 @@ if(document.querySelector('.formhandler') != null){
 		      notice: {
 					message: 'Нужно ваше согласие с условиями',
 		      		 appendTo: '.check-notice',
+		      		 nextToField: false
 				}
 		    }
 		},
+		 sender: {
+		    send: true
+		  },
+		  callbacks: {
+		  	
+		  	onSubmit(form, fields) {
+		  		console.log('onSubmit', form, fields);
+		  	},
+		  	onSend(result) {
+		  		console.log('onsend', result);
+		  	}
+		  }
 	});
 
 }
+
 
 
 }); //DOMContentLoaded
