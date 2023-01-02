@@ -9,7 +9,7 @@
 import Swiper, { Navigation, Pagination, Autoplay, EffectFade} from 'swiper';
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
-// import FormHandler from 'formhandler.js';
+import FormHandler from 'formhandler.js';
 
 
 //- SERVIVE FUNCTIONS==================
@@ -349,5 +349,28 @@ document.addEventListener('DOMContentLoaded', () => {
 //---------------END Swiper
 
 tippy('[data-tippy-content]');
+
+if(document.querySelector('.formhandler') != null){
+	const formhandler = new FormHandler({
+		fields: {
+			email: {
+				validation: 'isEmail',
+				notice: {
+					message: 'Нужен правильный емейл адрес',
+		      		 appendTo: '.field-notice',
+				}
+			},
+			checkbox: {
+		      validation: 'isCheckboxChecked',
+		      notice: {
+					message: 'Нужно ваше согласие с условиями',
+		      		 appendTo: '.check-notice',
+				}
+		    }
+		},
+	});
+
+}
+
 
 }); //DOMContentLoaded
