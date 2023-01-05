@@ -71,12 +71,13 @@
 	// fstdropdown
 /*--fstdropdown--*/
 @import "../../js/vendor/libs-vanilla/fstdropdown/fstdropdown.min";
+// @import "../../js/vendor/libs-vanilla/fstdropdown/fstdropdown-custom";
 /*--end fstdropdown--*/
 
 	// noUiSlider
-// /*--noUiSlider--*/
-// @import "../libs-vanilla/noUiSlider/nouislider.min";
-// /*--end noUiSlider--*/
+/*--noUiSlider--*/
+@import "../../js/vendor/libs-vanilla/noUiSlider/nouislider.min";
+/*--end noUiSlider--*/
 
 	// simplebar
 // /*--simplebar-*/

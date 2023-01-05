@@ -96,10 +96,10 @@ require('./vendor/libs-vanilla/accordion/vanilla-accordion.js')
 // require('./vendor/libs-vanilla/tiny-slider/dist/tiny-slider.js')
 
 //- wNumb--------------------------
-// var wNumb = require('./vendor/libs-vanilla/wnumb/wNumb.js')
+var wNumb = require('./vendor/libs-vanilla/wnumb/wNumb.js')
 
 // - noUiSlider--------------------------
-// var noUiSlider = require('./vendor/libs-vanilla/noUiSlider/nouislider.min.js')
+var noUiSlider = require('./vendor/libs-vanilla/noUiSlider/nouislider.min.js')
 
 //- iMask--------------------------
 // require('./vendor/libs-vanilla/imask/imask.js')
@@ -175,6 +175,46 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+		// noUiSlider
+		if(document.querySelector('.range-slider') !== null){
+			var slider = document.querySelector('.range-slider'),
+			inputMin = document.getElementById('minval'),
+			inputMax = document.getElementById('maxval');
+
+			var noUi = noUiSlider.create(slider, {
+				connect: true,
+				behaviour: 'tap',
+				start: [0, 1000],
+				range: {
+					min: 0,
+					max: 5000 
+				},
+				format: wNumb({
+					decimals: 0,
+					thousand: ' '
+				}),
+			});
+
+			slider.noUiSlider.on('update', getValues);
+			slider.noUiSlider.on('set', getValues);
+
+			function getValues() {
+				console.log(slider.noUiSlider.get()[0])
+				inputMin.value = slider.noUiSlider.get()[0];
+				inputMax.value = slider.noUiSlider.get()[1];			
+			}
+
+			inputMax.addEventListener('change', function() {
+				slider.noUiSlider.set([null, +inputMax.value]);
+			});
+			inputMin.addEventListener('change', function() {
+				console.log('min change!')
+				slider.noUiSlider.set([+inputMin.value, null]);
+			});
+	
+	}
+	// END noUiSlider
 
 	document.onclick = function(e) {
 		var target = e.target;

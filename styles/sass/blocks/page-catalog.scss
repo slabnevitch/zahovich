@@ -78,6 +78,7 @@
 	background-color: #fff;
 	position: absolute;
 	top: calc(100% + 2px);
+	width: 100%;
 	box-shadow: inset 0 1px 1px rgb($accent, .8), 0 0 8px rgb($accent, .6);
 }
 .fstdropdown.open:hover{
@@ -85,4 +86,26 @@
 }
 .fstdropdown-select {}
 
-.page-catalog__content {}
+.page-catalog__content {
+	display: grid;
+	grid-template-columns: 375px 1fr;
+	grid-gap: 30px;
+}
+.range-top {
+	display: flex;
+}
+.range-top__col {
+	flex: 0 0 50%;
+	display: flex;
+	// align-items: center;
+	justify-content: center;
+}
+.range-top__wrap{
+	flex: 0 2 auto;
+}
+.range__input {
+	width: 100%;
+}
+.range-top__wallet {
+	flex-shrink: 0;
+}
