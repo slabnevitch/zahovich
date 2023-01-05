@@ -78,7 +78,7 @@ require('./vendor/libs-vanilla/multilevel-panel/multilevel-panel.js')
 // require('./vendor/libs-vanilla/lazysizes/lazysizes.min.js')
 	
 //- accordion--------------------------
-// require('./vendor/libs-vanilla/accordion/vanilla-accordion.js')
+require('./vendor/libs-vanilla/accordion/vanilla-accordion.js')
 	
 //- tabs--------------------------
 // require('./vendor/libs-vanilla/tabs/tabs-pure.js')
@@ -130,7 +130,7 @@ import tippy from 'tippy.js';
 // var SimpleBar = require('./vendor/libs-vanilla/simplebar/simplebar.min.js')
 	
 //- fstdropdown (кастомный селект), исп-е.: <select data-searchdisable="true" class="fstdropdown-select">
-// require('./vendor/libs-vanilla/fstdropdown/fstdropdown.min.js')
+require('./vendor/libs-vanilla/fstdropdown/fstdropdown.min.js')
 
 //- baguetteBox-------------------------- use: https://github.com/feimosi/baguetteBox.js#usage
 // var baguetteBox = require('./vendor/libs-vanilla/baguetteBox/dist/baguetteBox.min.js')
