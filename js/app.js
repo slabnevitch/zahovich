@@ -176,81 +176,63 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-		// noUiSlider
-		if(document.querySelector('.range-slider') !== null){
-			var slider = document.querySelector('.range-slider'),
-			inputMin = document.getElementById('minval'),
-			inputMax = document.getElementById('maxval'),
-			widthKeff = 10;
+	// for many Sliders
+	if(document.querySelector('.range-slider') !== null){
+		var readySlidersArr = [];//массив всех слайдеров для доступа программно
+			
+			Array.prototype.slice.call(document.querySelectorAll('.range')).forEach(function(rangeBlock) {
+				var slider = rangeBlock.querySelector('.range-slider'),
+						inputMin = rangeBlock.querySelector('#minval'),
+						inputMax = rangeBlock.querySelector('#maxval'),
+						widthKeff = 10,
+						
+						noUi =noUiSlider.create(slider, {
+							connect: true,
+							behaviour: 'tap',
+							tooltips: slider.dataset.units ? true : false,
+							start: [Number(inputMin.value), Number(inputMax.value)],
+							range: {
+								min: 0,
+								max: Number(slider.dataset.maxval) 
+							},
+							format: {
+			        // 'to' the formatted value. Receives a number.
+								to: function (value) {
+									return slider.dataset.units ? Math.ceil(Number(value)) + ' ' + slider.dataset.units : Math.ceil(Number(value));
+								},
+			        // 'from' the formatted value.
+			        // Receives a string, should return a number.
+								from: function (value) {
+									return Math.ceil(Number(value.replace(',-', '')));
+								}
+							}
+						});
 
-			var noUi = noUiSlider.create(slider, {
-				connect: true,
-				behaviour: 'tap',
-				tooltips: true,
-				// tooltips: {
-				// 	to: function (value) {
-				// 		return value + ' .руб';
-				// 	},
-				// 	from: function (value) {
-				// 		return Math.ceil(Number(value.replace(',-', '')));
-				// 	}
-				// },
-				start: [Number(inputMin.value), Number(inputMax.value)],
-				range: {
-					min: 0,
-					max: Number(slider.dataset.maxval) 
-				},
+						slider.noUiSlider.on('update', getValues);
+						slider.noUiSlider.on('set', getValues);
 
-				// format: wNumb({
-				// 	decimals: 0,
-				// 	thousand: ' '
-				// }),
-				format: {
-        // 'to' the formatted value. Receives a number.
-					to: function (value) {
-						return Math.ceil(Number(value)) + ' руб.';
-					},
-        // 'from' the formatted value.
-        // Receives a string, should return a number.
-					from: function (value) {
-						return Math.ceil(Number(value.replace(',-', '')));
-					}
-				}
+						function getValues() {
+							console.log(slider.noUiSlider.get()[0])
+							inputMin.value = (slider.noUiSlider.get()[0]);
+							inputMax.value = (slider.noUiSlider.get()[1]);			
+							inputMin.style.width = ((inputMin.value.length + 1) * widthKeff) + 'px';
+							inputMax.style.width = ((inputMax.value.length + 1) * widthKeff) + 'px';
+						}
+
+						inputMax.addEventListener('change', function() {
+							slider.noUiSlider.set([null, +inputMax.value]);
+							// this.style.width = ((this.value.length + 1) * widthKeff) + 'px';
+						});
+						inputMin.addEventListener('change', function() {
+							console.log('min change!')
+							slider.noUiSlider.set([+inputMin.value, null]);
+							// this.style.width = ((this.value.length + 1) * widthKeff) + 'px';
+						});
+					readySlidersArr.push(noUi);
 			});
 
-			slider.noUiSlider.on('update', getValues);
-			slider.noUiSlider.on('set', getValues);
-
-			function getValues() {
-				console.log(slider.noUiSlider.get()[0])
-				inputMin.value = (slider.noUiSlider.get()[0]);
-				inputMax.value = (slider.noUiSlider.get()[1]);			
-				inputMin.style.width = ((inputMin.value.length + 1) * widthKeff) + 'px';
-				inputMax.style.width = ((inputMax.value.length + 1) * widthKeff) + 'px';
-			}
-
-			inputMax.addEventListener('change', function() {
-				slider.noUiSlider.set([null, +inputMax.value]);
-				// this.style.width = ((this.value.length + 1) * widthKeff) + 'px';
-			});
-			inputMin.addEventListener('change', function() {
-				console.log('min change!')
-				slider.noUiSlider.set([+inputMin.value, null]);
-				// this.style.width = ((this.value.length + 1) * widthKeff) + 'px';
-			});
-
-			// [inputMax, inputMin].forEach((item) => {
-			// 	item.addEventListener('keydown', setInputWidth);
-			// 	item.addEventListener('keyup', setInputWidth);
-			// 	item.addEventListener('keypress', setInputWidth);
-			// });
-
-			// function setInputWidth(e){
-			// 	e.target.style.width = ((e.target.value.length + 1) * widthKeff) + 'px';
-			// }
-	
-	}
-	// END noUiSlider
+		}
+		// END noUiSlider
 
 	document.onclick = function(e) {
 		var target = e.target;

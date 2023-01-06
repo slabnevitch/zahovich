@@ -1,12 +1,12 @@
 <div class="catalog-filter">
-	<ul class="accordion" data-accordion data-breakpoint="992">
+	<ul class="accordion" data-breakpoint="992">
 
 		<li class="accordion__item">
 			<div class="accordion__link">
 				<div class="catalog-filter__header">Фильтр товаров</div>		
 			</div>
 			<div class="accordion__content">
-				<ul class="accordion catalog-filter__list" data-accordion>
+				<ul class="accordion catalog-filter__list">
 					<li class="accordion__item catalog-filter__item catalog-filter__item--slider active">
 						<div class="accordion__link catalog-filter__link">Цена</div>
 						<div class="accordion__content catalog-filter__content">
@@ -22,14 +22,276 @@
 										<!-- <div class="range-top__wallet"> .руб</div>	 -->
 									</div>
 								</div>
-								<div class="range-slider" data-maxval="5000"></div>
+								<div class="range-slider" data-maxval="5000" data-units="руб."></div>
 							</div>
 						</div> 
 					</li>
 
 					<li class="accordion__item catalog-filter__item">
 						<div class="accordion__link catalog-filter__link">Производство</div>
-						<div class="accordion__content catalog-filter__content">
+						<div class="accordion__content catalog-filter__content hidden">
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									АиР
+									<span class="catalog-filter__count">(250)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" checked/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									Булат Сергея Баранова
+									<span class="catalog-filter__count">(25)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									Булат Умерова
+									<span class="catalog-filter__count">(265)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									ЗЗОСС
+									<span class="catalog-filter__count">(265)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									ЗИК
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									ЗЛАТКО
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									ЗлатПрофит
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									ЗОК
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									НБК
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									НИКОН
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									Оружейник
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									РОСоружие
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input" placeholder=""/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									РОСоружие
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									СТИЛЬ-М
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+						</div> 
+					</li>
+					<li class="accordion__item catalog-filter__item">
+						<div class="accordion__link catalog-filter__link">Сталь</div>
+						<div class="accordion__content catalog-filter__content hidden">
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									100Х13М
+									<span class="catalog-filter__count">(250)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									110Х18М-ШД
+									<span class="catalog-filter__count">(18)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									40Х10С2М (ЭИ-107)
+									<span class="catalog-filter__count">(180)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									50Х14МФ
+									<span class="catalog-filter__count">(100)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									95Х18
+									<span class="catalog-filter__count">(170)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									AUS-8
+									<span class="catalog-filter__count">(95)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									ELMAX
+									<span class="catalog-filter__count">(95)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									RWL-34
+									<span class="catalog-filter__count">(95)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									Дамаск
+									<span class="catalog-filter__count">(5)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									К340
+									<span class="catalog-filter__count">(70)</span>
+								</span>
+							</label>
+							<label class="catalog-filter__option">
+								<input autocomplete="off" type="checkbox" name="item" class="catalog-filter__input"/>
+								<span class="catalog-filter__check"></span>
+								<span class="catalog-filter__label">
+									Литой булат
+									<span class="catalog-filter__count">(71)</span>
+								</span>
+							</label>
+						</div> 
+					</li>
+					<li class="accordion__item catalog-filter__item">
+						<div class="accordion__link catalog-filter__link">Общая длина, мм</div>
+						<div class="accordion__content catalog-filter__content hidden">
+							<div class="range">
+								<div class="range-top">
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="0" id="minval" />
+											
+										<!-- <div class="range-top__wallet"> .руб</div> -->
+									</div>
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="300" id="maxval"/>
+										<!-- <div class="range-top__wallet"> .руб</div>	 -->
+									</div>
+								</div>
+								<div class="range-slider" data-maxval="600"></div>
+							</div>
+						</div> 
+					</li>
+					<li class="accordion__item catalog-filter__item">
+						<div class="accordion__link catalog-filter__link">Длина клинка, мм</div>
+						<div class="accordion__content catalog-filter__content hidden">
+							<div class="range">
+								<div class="range-top">
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="0" id="minval" />
+											
+										<!-- <div class="range-top__wallet"> .руб</div> -->
+									</div>
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="300" id="maxval"/>
+										<!-- <div class="range-top__wallet"> .руб</div>	 -->
+									</div>
+								</div>
+								<div class="range-slider" data-maxval="300"></div>
+							</div>
+						</div> 
+					</li>
+					<li class="accordion__item catalog-filter__item">
+						<div class="accordion__link catalog-filter__link">Ширина клинка, мм</div>
+						<div class="accordion__content catalog-filter__content hidden">
+							<div class="range">
+								<div class="range-top">
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="0" id="minval" />
+											
+										<!-- <div class="range-top__wallet"> .руб</div> -->
+									</div>
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="50" id="maxval"/>
+										<!-- <div class="range-top__wallet"> .руб</div>	 -->
+									</div>
+								</div>
+								<div class="range-slider" data-maxval="100"></div>
+							</div>
 						</div> 
 					</li>
 
