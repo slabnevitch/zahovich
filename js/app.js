@@ -180,20 +180,42 @@ document.addEventListener('DOMContentLoaded', () => {
 		if(document.querySelector('.range-slider') !== null){
 			var slider = document.querySelector('.range-slider'),
 			inputMin = document.getElementById('minval'),
-			inputMax = document.getElementById('maxval');
+			inputMax = document.getElementById('maxval'),
+			widthKeff = 10;
 
 			var noUi = noUiSlider.create(slider, {
 				connect: true,
 				behaviour: 'tap',
+				tooltips: true,
+				// tooltips: {
+				// 	to: function (value) {
+				// 		return value + ' .руб';
+				// 	},
+				// 	from: function (value) {
+				// 		return Math.ceil(Number(value.replace(',-', '')));
+				// 	}
+				// },
 				start: [0, 1000],
 				range: {
 					min: 0,
-					max: 5000 
+					max: Number(slider.dataset.maxval) 
 				},
-				format: wNumb({
-					decimals: 0,
-					thousand: ' '
-				}),
+
+				// format: wNumb({
+				// 	decimals: 0,
+				// 	thousand: ' '
+				// }),
+				format: {
+        // 'to' the formatted value. Receives a number.
+					to: function (value) {
+						return Math.ceil(Number(value)) + ' руб.';
+					},
+        // 'from' the formatted value.
+        // Receives a string, should return a number.
+					from: function (value) {
+						return Math.ceil(Number(value.replace(',-', '')));
+					}
+				}
 			});
 
 			slider.noUiSlider.on('update', getValues);
@@ -201,17 +223,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			function getValues() {
 				console.log(slider.noUiSlider.get()[0])
-				inputMin.value = slider.noUiSlider.get()[0];
-				inputMax.value = slider.noUiSlider.get()[1];			
+				inputMin.value = (slider.noUiSlider.get()[0]);
+				inputMax.value = (slider.noUiSlider.get()[1]);			
+				inputMin.style.width = ((inputMin.value.length + 1) * widthKeff) + 'px';
+				inputMax.style.width = ((inputMax.value.length + 1) * widthKeff) + 'px';
 			}
 
 			inputMax.addEventListener('change', function() {
 				slider.noUiSlider.set([null, +inputMax.value]);
+				// this.style.width = ((this.value.length + 1) * widthKeff) + 'px';
 			});
 			inputMin.addEventListener('change', function() {
 				console.log('min change!')
 				slider.noUiSlider.set([+inputMin.value, null]);
+				// this.style.width = ((this.value.length + 1) * widthKeff) + 'px';
 			});
+
+			// [inputMax, inputMin].forEach((item) => {
+			// 	item.addEventListener('keydown', setInputWidth);
+			// 	item.addEventListener('keyup', setInputWidth);
+			// 	item.addEventListener('keypress', setInputWidth);
+			// });
+
+			// function setInputWidth(e){
+			// 	e.target.style.width = ((e.target.value.length + 1) * widthKeff) + 'px';
+			// }
 	
 	}
 	// END noUiSlider
@@ -232,9 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}else{
 				document.querySelector('.catalog').classList.remove('catalog-opened');
 				document.querySelectorAll('.catalog-menu__item').forEach(item => item.classList.remove('catalog-item-opened'));
-
 			}
-
 		}
 		//END desktop catalog toggle
 
