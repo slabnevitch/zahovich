@@ -103,21 +103,148 @@ line-height: 29px;
 	grid-template-columns: 375px 1fr;
 	grid-gap: 30px;
 }
-.range-top {
-	display: flex;
-}
-.range-top__col {
-	flex: 0 0 50%;
-	display: flex;
-	// align-items: center;
-	justify-content: center;
-}
+
 .range-top__wrap{
 	flex: 0 2 auto;
 }
-.range__input {
-	width: 100%;
+// .range-top__wallet {
+// 	flex-shrink: 0;
+// }
+
+.catalog-filter {
+	.range-top {
+		padding: 8px 0;
+		margin-bottom: 20px;
+		display: flex;
+		border: 1px solid #CBCBCB;
+border-radius: 2px;
+		position: relative;
+			&:before{
+				content: '';
+				@include absolute-center;
+				display: block;
+				width: 1px;
+				height: 100%;
+				background-color: #CBCBCB;
+			}
+	}
+	.range-top__col {
+		flex: 0 0 50%;
+		display: flex;
+	// align-items: center;
+	justify-content: center;
+
+	}
+	.range__input {
+		border: none;
+	}
+	.noUi-target{
+		background-color: $accent;
+		border-color: $accent;
+	}
+	.noUi-connect{
+		background-color: $text;
+	}
+	.noUi-horizontal .noUi-handle{
+		width: 18px;
+		height: 18px;
+		margin-top: -9px;
+		border-color: $accent;
+		background-color: $text;
+		border-width: 3px;
+	}
 }
-.range-top__wallet {
-	flex-shrink: 0;
+.accordion {
+	padding: 0;
 }
+.accordion__item {
+	list-style-type: none;
+}
+.accordion__link {}
+.catalog-filter__header {
+	padding: 23px 30px;
+	background-color: $text;
+	color: #fff;
+	font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+}
+.accordion__content {}
+.catalog-filter__list {}
+.catalog-filter__item {
+	&--slider{
+		.catalog-filter__link {
+			background-color: #fff;
+			color: $text;
+		}
+	}
+	&.active{
+		.catalog-filter__link {
+			&:after{
+    			transform: rotate(180deg);
+
+			}
+		}
+	}
+}
+.catalog-filter__item--slider {}
+.catalog-filter__link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 15px;
+	padding: 13px 30px;
+	background-color: $text;
+	color: #fff;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+
+	@media (any-hover: hover) { //только для устройств с ховером
+			&:hover{
+				cursor: pointer;
+			}
+		}
+
+
+	&:after{
+		content: '\e902';
+		display: block;
+		font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 8px;
+    transition: transform .4s;
+    color: $accent;
+	}
+}
+.catalog-filter__content {
+	padding:0 30px;
+	.range {
+		padding-bottom: 57px;
+		.noUi-horizontal .noUi-tooltip{
+			bottom: auto;
+			top: 150%;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 17px;
+
+			color: rgba(20, 20, 20, 0.5);	
+		}
+		.noUi-tooltip{
+			padding: 0;
+			border: none;
+		}
+	}
+
+}
+.range-top {}
+.range-top__col {}
+.range__input {}
+.range-top__wallet {}
+.range-slider {}

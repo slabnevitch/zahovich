@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				// 		return Math.ceil(Number(value.replace(',-', '')));
 				// 	}
 				// },
-				start: [0, 1000],
+				start: [Number(inputMin.value), Number(inputMax.value)],
 				range: {
 					min: 0,
 					max: Number(slider.dataset.maxval) 

@@ -1,32 +1,41 @@
 <div class="catalog-filter">
-	<div class="catalog-filter__header">Фильтр товаров</div>
+	<ul class="accordion" data-accordion data-breakpoint="992">
 
-	<ul class="accordion catalog-filter__list" data-accordion>
-		<li class="accordion__item catalog-filter__item catalog-filter__item--slider">
-			<div class="accordion__link catalog-filter__link">item1</div>
-			<div class="accordion__content catalog-filter__content">
-				<div class="range">
-					<div class="range-top">
-						<div class="range-top__col">
-							<input class="range__input" autocomplete="off" type="text" name="" value="100" id="minval" />
-								
-							<!-- <div class="range-top__wallet"> .руб</div> -->
-						</div>
-						<div class="range-top__col">
-							<input class="range__input" autocomplete="off" type="text" name="" value="1000" id="maxval"/>
-							<!-- <div class="range-top__wallet"> .руб</div>	 -->
-						</div>
-					</div>
-					<div class="range-slider" data-maxval="5000"></div>
-				</div>
+		<li class="accordion__item">
+			<div class="accordion__link">
+				<div class="catalog-filter__header">Фильтр товаров</div>		
+			</div>
+			<div class="accordion__content">
+				<ul class="accordion catalog-filter__list" data-accordion>
+					<li class="accordion__item catalog-filter__item catalog-filter__item--slider active">
+						<div class="accordion__link catalog-filter__link">Цена</div>
+						<div class="accordion__content catalog-filter__content">
+							<div class="range">
+								<div class="range-top">
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="2000" id="minval" />
+											
+										<!-- <div class="range-top__wallet"> .руб</div> -->
+									</div>
+									<div class="range-top__col">
+										<input class="range__input" autocomplete="off" type="text" name="" value="5000" id="maxval"/>
+										<!-- <div class="range-top__wallet"> .руб</div>	 -->
+									</div>
+								</div>
+								<div class="range-slider" data-maxval="5000"></div>
+							</div>
+						</div> 
+					</li>
+
+					<li class="accordion__item catalog-filter__item">
+						<div class="accordion__link catalog-filter__link">Производство</div>
+						<div class="accordion__content catalog-filter__content">
+						</div> 
+					</li>
+
+				</ul>
 			</div> 
 		</li>
-
-		<li class="accordion__item catalog-filter__item">
-			<div class="accordion__link catalog-filter__link">item1</div>
-			<div class="accordion__content catalog-filter__content">
-			</div> 
-		</li>
-
 	</ul>
+
 </div>
