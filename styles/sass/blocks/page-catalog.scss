@@ -331,49 +331,51 @@ line-height: 24px;
 .btn {}
 .btn-empty {}
 .pagination {
-	display: flex;
-	align-items: center;
-	column-gap: 34px;
+	// display: flex;
+	// align-items: center;
+	// column-gap: 34px;
+
+	@include pagination($arrowColor: $accent);
 
 }
 .pagination__arrow {
-	@include but-null;
-	color: $accent;
+// 	@include but-null;
+// 	color: $accent;
 	font-size: 10px;
 
-	&[disabled]{
-		color: rgba(#000, .12);
-	}
+// 	&[disabled]{
+// 		color: rgba(#000, .12);
+// 	}
 }
-.pagination__arrow--prev {
-	transform: rotate(90deg);
-}
-.pagination__list {
-	display: flex;
-	column-gap: 9px;
-}
-.pagination__item {
-	list-style-type: none;
-}
+// .pagination__arrow--prev {
+// 	transform: rotate(90deg);
+// }
+// .pagination__list {
+// 	display: flex;
+// 	column-gap: 9px;
+// }
+// .pagination__item {
+// 	list-style-type: none;
+// }
 .pagination__link {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 34px;
-	height: 34px;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	width: 34px;
+// 	height: 34px;
 	font-weight: 500;
-	font-size: 18px;
-	line-height: 32px;
-	/* identical to box height, or 178% */
-	border-radius: 50%;
-		background-color: #fff;
+// 	font-size: 18px;
+// 	line-height: 32px;
+// 	/* identical to box height, or 178% */
+// 	border-radius: 50%;
+// 		background-color: #fff;
 
-color: #000000;
-	&.active{
-		color: #fff;
-		background-color: $accent;
-	}
-}
-.pagination__arrow--next {
-	transform: rotate(-90deg);
+// color: #000000;
+// 	&.active{
+// 		color: #fff;
+// 		background-color: $accent;
+// 	}
+// }
+// .pagination__arrow--next {
+// 	transform: rotate(-90deg);
 }
