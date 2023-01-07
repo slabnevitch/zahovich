@@ -40,6 +40,16 @@ h2{
    color: #fff;
   }
   
+  &-empty{
+    color: $accent;
+    background-color: #fff;
+    border: 1px solid $accent;
+
+    &:hover, &:active{
+      border-color: transparent;
+    }
+    
+  }
   &-fw{
    width: 100%;
   }

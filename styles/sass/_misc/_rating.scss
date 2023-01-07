@@ -159,9 +159,9 @@
 		  letter-spacing: normal;
 		}
 }
-.star-rating{
-	@include star-rating(22px, 10px, $accent);
-}
+// .star-rating{
+// 	@include star-rating(22px, 10px, $accent);
+// }
 .simple-rating{
 	@include simple-rating(50px, 0px);
 }

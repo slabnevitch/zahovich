@@ -102,6 +102,7 @@ line-height: 29px;
 	display: grid;
 	grid-template-columns: 375px 1fr;
 	grid-gap: 30px;
+	@include adaptive-value('padding-bottom', 30, 30, 1);
 }
 
 .range-top__wrap{
@@ -172,6 +173,11 @@ line-height: 24px;
 .accordion__content {}
 .catalog-filter__list {}
 .catalog-filter__item {
+
+
+	&:not(:last-child){
+		border-bottom: 1px solid rgba($text, .5);
+	}
 	&--slider{
 		.catalog-filter__link {
 			background-color: #fff;
@@ -208,7 +214,7 @@ line-height: 24px;
 
 
 	&:after{
-		content: '\e902';
+		content: '\e906';
 		display: block;
 		font-family: 'icomoon' !important;
     speak: never;
@@ -244,6 +250,7 @@ line-height: 24px;
 
 }
 .catalog-filter__option {
+	position: relative;
 	display: flex;
 	align-items: center;
 	margin: 0;
@@ -287,9 +294,86 @@ line-height: 24px;
 
 }
 .catalog-filter__label {
+	display: flex;
+	align-items: flex-end;
 	font-weight: 500;
+
+	.star-rating{
+		@include star-rating(22px, 10px, $accent);
+	}
 }
 .catalog-filter__count {
 	margin-left: 15px;
 	color: $accent;
+
+	&--rating{
+		margin-left: 20px;
+		color: $text;
+		line-height: normal;
+	}
+}
+
+.catalog-content {
+	.catalog-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+		grid-gap: 30px;
+	}
+
+}
+.catalog-content__bottom {
+	padding-top: 60px;
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 30px;
+	justify-content: space-between;
+}
+.btn {}
+.btn-empty {}
+.pagination {
+	display: flex;
+	align-items: center;
+	column-gap: 34px;
+
+}
+.pagination__arrow {
+	@include but-null;
+	color: $accent;
+	font-size: 10px;
+
+	&[disabled]{
+		color: rgba(#000, .12);
+	}
+}
+.pagination__arrow--prev {
+	transform: rotate(90deg);
+}
+.pagination__list {
+	display: flex;
+	column-gap: 9px;
+}
+.pagination__item {
+	list-style-type: none;
+}
+.pagination__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 32px;
+	/* identical to box height, or 178% */
+	border-radius: 50%;
+		background-color: #fff;
+
+color: #000000;
+	&.active{
+		color: #fff;
+		background-color: $accent;
+	}
+}
+.pagination__arrow--next {
+	transform: rotate(-90deg);
 }
