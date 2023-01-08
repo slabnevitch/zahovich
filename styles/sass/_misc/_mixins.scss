@@ -110,7 +110,7 @@
 	
 	display: flex;
 	align-items: center;
-	column-gap: #{$gap} + 'px';
+	column-gap: #{$gap + px};
 
 	.pagination__arrow {
 		@include but-null;
@@ -131,7 +131,7 @@
 	.pagination__list {
 		display: flex;
 		align-items: center;
-		column-gap: #{$gap} + 'px';
+		column-gap: #{$gap + px};
 	}
 
 	.pagination__item{
@@ -142,9 +142,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: #{$width} + 'px';
-		height: #{$width} + 'px';
-		font-size:#{$fontSize} + 'px';
+		width: #{$width + px};
+		height: #{$width + px};
+		font-size:#{$fontSize + px};
 		@if $round == true { 
 			border-radius: 50%;
 	  }
