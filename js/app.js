@@ -418,61 +418,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	tippy('[data-tippy-content]');
 
-	// if(document.querySelector('.footer__form') != null){
-	// 	var pizdyk = new FormHandler({
-	// 		// block: '.footer__form',
-	// 		fields: {
-	// 			email: {
-	// 				validation: 'isEmail',
-	// 				notice: {
-	// 					message: 'Нужен правильный емейл адрес',
-	// 		      		 appendTo: '.field-notice',
-	// 		      		 nextToField: false
-	// 				}
-	// 			},
-	// 			checkbox: {
-	// 		      validation: 'isCheckboxChecked',
-	// 		      notice: {
-	// 					message: 'Нужно ваше согласие с условиями',
-	// 		      		 appendTo: '.check-notice',
-	// 		      		 nextToField: false
-	// 				}
-	// 		    }
-	// 		},
-	// 		 sender: {
-	// 		    send: true
-	// 		 },
-	// 		 callbacks: {
-			  	
-	// 		  	onSubmit(form, fields) {
-	// 		  		console.log('onSubmit', form, fields);
-	// 		  	},
-	// 		  	onSend(result) {
-	// 		  		console.log('onsend', result);
-	// 		  	}
-	// 		  }
-	// 	});
-	// 	console.log(pizdyk)
-
-	// }
-
-	if(document.querySelector('.modal') != null){
-		var handler = new FormHandler({
-			// block: '.callback-form',
+	if(document.querySelector('.footer__form') != null){
+		var pizdyk = new FormHandler({
+			form: {
+				block: '.form-footer',
+				submit: '.form-footer__submit'
+			},
 			fields: {
-				firstname: {
-					validation: 'isName',
+				email: {
+					validation: 'isEmail',
 					notice: {
 						message: 'Нужен правильный емейл адрес',
-			      		 // appendTo: '.field-notice',
-			      		 // nextToField: false
-					}
-				},
-				phone: {
-					validation: 'isPhone',
-					notice: {
-						message: 'Нужен правильный номер телефона',
-			      		 appendTo: '.phone-notice',
+			      		 appendTo: '.field-notice',
 			      		 nextToField: false
 					}
 				},
@@ -480,7 +437,57 @@ document.addEventListener('DOMContentLoaded', () => {
 			      validation: 'isCheckboxChecked',
 			      notice: {
 						message: 'Нужно ваше согласие с условиями',
-			      		appendTo: '.check-notice',
+			      		 appendTo: '.check-notice',
+			      		 nextToField: false
+					}
+			    }
+			},
+			 sender: {
+			    send: true
+			 },
+			 callbacks: {
+			  	
+			  	onSubmit(form, fields) {
+			  		console.log('onSubmit', form, fields);
+			  	},
+			  	onSend(result) {
+			  		console.log('onsend', result);
+			  	}
+			  }
+		});
+		console.log(pizdyk)
+
+	}
+
+	if(document.querySelector('.modal') != null){
+		var piska = new FormHandler({
+			form: {
+				block: '.callback-form',
+				submit: '.callback-form__submit'
+			},
+			// block: '.callback-form',
+			fields: {
+				firstname: {
+					validation: 'isName',
+					notice: {
+						message: 'Необходимо ввести свое имя',
+			      		 appendTo: '.callback-field-notice',
+			      		 nextToField: false
+					}
+				},
+				phone: {
+					validation: 'isPhone',
+					notice: {
+						message: 'Нужен правильный номер телефона',
+			      		 appendTo: '.callback-phone-notice',
+			      		 nextToField: false
+					}
+				},
+				checkbox2: {
+			      validation: 'isCheckboxChecked',
+			      notice: {
+						message: 'Нужно ваше согласие с условиями',
+			      		appendTo: '.callback-check-notice',
 			      		 nextToField: false
 					}
 			    }
@@ -489,9 +496,32 @@ document.addEventListener('DOMContentLoaded', () => {
 			    send: true
 			 }
 		});
-		console.log(handler)
+		console.log(piska)
 
 	}
+
+// 	const formhandler = new FormHandler({
+//   fields: {
+//     firstname: {
+//       validation: 'isName',
+//     },
+//     lastname: {
+//       validation: 'isName',
+//     },
+//     select: {
+//       validation: 'isSelected',
+//     },
+//     checkbox: {
+//       validation: 'isCheckboxChecked',
+//     },
+//     radio: {
+//       validation: 'isRadioChecked',
+//     },
+//     message: {
+//       validation: 'isNonEmpty',
+//     },
+//   },
+// });
 
 
 
