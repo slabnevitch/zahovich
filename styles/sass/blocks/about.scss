@@ -24,6 +24,10 @@ line-height: 27px;
 
 letter-spacing: 0.03em;
 
+&:not(:last-child){
+	margin-bottom: 24px;
+}
+
 @include max-screen($xss){
 	font-size: 16px;
 }

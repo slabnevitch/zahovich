@@ -106,7 +106,7 @@
 .multilevel-panel .multilevel-menu .with-submenu > a:after {
 
   @include max-screen($multilevelPoint){
-    content: "\e902";
+    content: "\e906";
     display: inline-block;
     margin-left: 15px;
     vertical-align: middle;
@@ -150,7 +150,7 @@
 
 }
 .multilevel-panel__back button:before {
-  content: "\e900";
+  content: "\e904";
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;

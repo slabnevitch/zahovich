@@ -18,7 +18,7 @@ import FormHandler from 'formhandler.js';
 //- require('./vendor/libs-vanilla/service-functions/remove-class.js')
 
 //- siblings--------------------------
-// require('./vendor/libs-vanilla/service-functions/siblings.js')
+// var siblings = require('./vendor/libs-vanilla/service-functions/siblings.js')
 
 //- webp-detection--------------------------
 // require('./vendor/libs-vanilla/service-functions/webp-detection.js')
@@ -27,10 +27,10 @@ import FormHandler from 'formhandler.js';
 //- require('./vendor/libs-vanilla/service-functions/dropdown-toggle.js')
 
 //- isMobile--------------------------
-// require('./vendor/libs-vanilla/service-functions/mobileDetect.js')
-
+// var isMobile = require('./vendor/libs-vanilla/service-functions/mobileDetect.js')
 //- All in one file--------------------------
-require('./vendor/libs-vanilla/service-functions/all-functions.js')
+var srvFuncs = require('./vendor/libs-vanilla/service-functions/all-functions.js')
+// Using: srvFuncs.siblings(), srvFuncs.removeClass(), etc
 
 
 //- WITH JQUERY===================================
@@ -140,34 +140,9 @@ require('./vendor/libs-vanilla/fstdropdown/fstdropdown.min.js')
 
 // var tingle = require('./vendor/libs-vanilla/tingle-master/dist/tingle.js')
 	
+// require('./vendor/color-scheme-switcher.js')
 //- end VANILLA JS===================================
 
-// require('./vendor/color-scheme-switcher.js')
-// require('./vendor/jquery-scrollify/jquery.scrollify.js')
-
-// var isMobile = {
-// 	Android:        function() { return navigator.userAgent.match(/Android/i) ? true : false; },
-// 	BlackBerry:     function() { return navigator.userAgent.match(/BlackBerry/i) ? true : false; },
-// 	iOS:            function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false; },
-// 	Windows:        function() { return navigator.userAgent.match(/IEMobile/i) ? true : false; },
-// 	any:            function() { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());  }
-// };
-// Use: if(isMobile.any()){ some code here }
-
-function siblings( elem ) {
-	var createSiblings = function( n, elem ) {
-		var matched = [];
-
-		for ( ; n; n = n.nextSibling ) {
-			if ( n.nodeType === 1 && n !== elem ) {
-				matched.push( n );
-			}
-		}
-
-		return matched;
-	};
-	return createSiblings( ( elem.parentNode || {} ).firstChild, elem );
-}
 
 document.querySelector('#multilevel-panel-open').onclick = function(e) {
 	// this.classList.toggle('on');
@@ -175,6 +150,16 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	// Fix height: 100% screen scroll problem on Safari ios
+	// if($('selector').length < 0){
+	// 	if(screen.width <= 991 && srvFuncs.isMobile.iOS()){
+	// 		window.addEventListener('resize', () => {
+	// 			document.querySelector('selector').style.setProperty('--height', `${window.innerHeight}px`);
+	// 		});
+	// 	}
+	// }
+	// END Fix height: 100% screen scroll problem on Safari ios
 
 	// for many Sliders
 	if(document.querySelector('.range-slider') !== null){
@@ -244,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					e.preventDefault();
 					document.querySelector('.catalog').classList.toggle('catalog-opened');
 					target.parentElement.classList.toggle('catalog-item-opened');
-					siblings(target.parentElement).forEach(item => item.classList.remove('catalog-item-opened'));
+					srvFuncs.siblings(target.parentElement).forEach(item => item.classList.remove('catalog-item-opened'));
 					// classList.toggle('catalog-item-opened');
 				}
 			}else{
