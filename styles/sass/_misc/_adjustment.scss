@@ -25,13 +25,18 @@ body{
 	}
 }
 
+// компенсация ширины скроллбара при появлении ванильных поапов
+// все содержимое страницы оборачивается в #wrapper-for-scroll-fix
+// использовать совместно с libs-vanilla/service-functions/scrollWidth.js 
 #wrapper-for-scroll-fix{
 	overflow: hidden;
 }
 #wrapper-for-scroll-fix.modal-open {
   padding-right: var(--scroll-width);
 }
-
+.modal__overlay{
+	z-index: 10;
+}
 // Прижать футер к низу
 
 // html, body{
@@ -189,7 +194,7 @@ padding-bottom: 52.25%;
 // service ui elements styles
 // @import "_misc/_tabs-accordion";
 @import "_misc/_rating";
-// @import "_misc/_form";
+@import "_misc/_form";
 @import "_misc/_noUiSlider-base";
 // @import "_misc/_counter";
 // @import "_misc/multilevel-dropdown.scss";
@@ -260,4 +265,21 @@ padding-bottom: 52.25%;
 	} 
 }
 @include toggle-mnu(#fff, $md, 15px, 15px);
+
+.modal__container{
+	background-color: #ecf1f2;
+}
+.modal__title{
+	margin-bottom: 15px;
+	color: $text;
+	text-align: center;
+}
+.callback-modal{
+	.form__custom-policy{
+		margin-bottom: 30px;
+	}
+}
+.micromodal-slide{
+	// display: block;
+}
 /*--------------------END adjustment----------------------*/ 

@@ -26,6 +26,9 @@ import FormHandler from 'formhandler.js';
 //- dropdown-toggle on touch devices--------------------------
 //- require('./vendor/libs-vanilla/service-functions/dropdown-toggle.js')
 
+//- Scroll-width(для компенсация "прыгания" страницы на ванильных модалках)--------------------------
+require('./vendor/libs-vanilla/service-functions/scrollWidth.js')
+
 //- isMobile--------------------------
 // var isMobile = require('./vendor/libs-vanilla/service-functions/mobileDetect.js')
 //- All in one file--------------------------
@@ -87,7 +90,7 @@ require('./vendor/libs-vanilla/accordion/vanilla-accordion.js')
 // require('./vendor/libs-vanilla/tabs-accordion-combine/tabs-accordion.js')
 	
 //- micromodal--------------------------
-// var MicroModal = require('./vendor/libs-vanilla/micromodal/micromodal.js')
+var MicroModal = require('./vendor/libs-vanilla/micromodal/micromodal.js')
 	
 //- swiper--------------------------
 // require('./vendor/libs-vanilla/swiper/swiper-bundle.min.js')
@@ -150,6 +153,30 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	// micromodal
+		if(document.querySelector('.modal') !== null){
+			MicroModal.init({
+				openTrigger: 'data-micromodal-open', 
+				closeTrigger: 'data-micromodal-close',
+				openClass: 'is-open', 
+				disableFocus: true, 
+				awaitOpenAnimation: true,
+				// awaitCloseAnimation: true,
+				disableScroll: true,
+				onShow: modal => {
+					// console.log(arguments)
+					// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+					document.querySelector('#wrapper-for-scroll-fix').classList.add('modal-open');
+				}, // [1]
+				onClose: modal => {
+					// console.info(`${modal.id} is hidden`);
+					// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+					document.querySelector('#wrapper-for-scroll-fix').classList.remove('modal-open');
+				}
+			});		
+		}
+		// END micromodal
 
 	// Fix height: 100% screen scroll problem on Safari ios
 	// if($('selector').length < 0){
@@ -389,44 +416,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //---------------END Swiper
 
-tippy('[data-tippy-content]');
+	tippy('[data-tippy-content]');
 
-document.querySelector('.footer__form').onsubmit = () => console.log('submiy!')
-if(document.querySelector('.formhandler') != null){
-	const formhandler = new FormHandler({
-		fields: {
-			email: {
-				validation: 'isEmail',
-				notice: {
-					message: 'Нужен правильный емейл адрес',
-		      		 appendTo: '.field-notice',
-		      		 nextToField: false
-				}
+	// if(document.querySelector('.footer__form') != null){
+	// 	var pizdyk = new FormHandler({
+	// 		// block: '.footer__form',
+	// 		fields: {
+	// 			email: {
+	// 				validation: 'isEmail',
+	// 				notice: {
+	// 					message: 'Нужен правильный емейл адрес',
+	// 		      		 appendTo: '.field-notice',
+	// 		      		 nextToField: false
+	// 				}
+	// 			},
+	// 			checkbox: {
+	// 		      validation: 'isCheckboxChecked',
+	// 		      notice: {
+	// 					message: 'Нужно ваше согласие с условиями',
+	// 		      		 appendTo: '.check-notice',
+	// 		      		 nextToField: false
+	// 				}
+	// 		    }
+	// 		},
+	// 		 sender: {
+	// 		    send: true
+	// 		 },
+	// 		 callbacks: {
+			  	
+	// 		  	onSubmit(form, fields) {
+	// 		  		console.log('onSubmit', form, fields);
+	// 		  	},
+	// 		  	onSend(result) {
+	// 		  		console.log('onsend', result);
+	// 		  	}
+	// 		  }
+	// 	});
+	// 	console.log(pizdyk)
+
+	// }
+
+	if(document.querySelector('.modal') != null){
+		var handler = new FormHandler({
+			// block: '.callback-form',
+			fields: {
+				firstname: {
+					validation: 'isName',
+					notice: {
+						message: 'Нужен правильный емейл адрес',
+			      		 // appendTo: '.field-notice',
+			      		 // nextToField: false
+					}
+				},
+				phone: {
+					validation: 'isPhone',
+					notice: {
+						message: 'Нужен правильный номер телефона',
+			      		 appendTo: '.phone-notice',
+			      		 nextToField: false
+					}
+				},
+				checkbox: {
+			      validation: 'isCheckboxChecked',
+			      notice: {
+						message: 'Нужно ваше согласие с условиями',
+			      		appendTo: '.check-notice',
+			      		 nextToField: false
+					}
+			    }
 			},
-			checkbox: {
-		      validation: 'isCheckboxChecked',
-		      notice: {
-					message: 'Нужно ваше согласие с условиями',
-		      		 appendTo: '.check-notice',
-		      		 nextToField: false
-				}
-		    }
-		},
-		 sender: {
-		    send: true
-		  },
-		  callbacks: {
-		  	
-		  	onSubmit(form, fields) {
-		  		console.log('onSubmit', form, fields);
-		  	},
-		  	onSend(result) {
-		  		console.log('onsend', result);
-		  	}
-		  }
-	});
+			 sender: {
+			    send: true
+			 }
+		});
+		console.log(handler)
 
-}
+	}
 
 
 

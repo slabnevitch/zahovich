@@ -115,7 +115,44 @@ color: rgba(255, 255, 255, 0.8);
 .footer__link {
 	color: $accent;
 }
-.footer__form {}
+.footer__form {
+	.footer__input {
+		height: 50px;
+		padding-left: 24px;
+		padding-right: 24px;
+		border: 1px solid #fff;
+		border-right: none;
+		padding-right: 55px;
+		background: rgba(255, 255, 255, 0.05); ;
+		border-radius: 3px 0 0 3px;
+		@include placecolor(rgba(#fff, 0.5));
+		font-size: 16px;
+		color: #fff;
+	}
+	.form__custom-chek {
+		display: block;
+		position: relative;
+		width: 16px;
+		height: 16px;
+		border: 1px solid #FFFFFF;
+		border-radius: 2px;
+
+	@media (any-hover: hover) { //только для устройств с ховером
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	&:before{
+		@include absolute-center-old;
+		display: none;
+		width: 8px;
+		height: 8px;
+		border-radius: 2px;
+		background-color: #fff;
+		content: '';
+	}
+}
+}
 .footer__form-top {
 	display: grid;
 	grid-template-columns: 1fr 50px;
@@ -138,19 +175,7 @@ color: rgba(255, 255, 255, 0.8);
 		}
 	}
 }
-.footer__input {
-	height: 50px;
-	padding-left: 24px;
-	padding-right: 24px;
-	border: 1px solid #fff;
-	border-right: none;
-	padding-right: 55px;
-	background: rgba(255, 255, 255, 0.05); ;
-	border-radius: 3px 0 0 3px;
-	@include placecolor(rgba(#fff, 0.5));
-	font-size: 16px;
-	color: #fff;
-}
+
 .form__custom-policy {
 	display: flex;
 	align-items: flex-start;
@@ -169,29 +194,7 @@ color: rgba(255, 255, 255, 0.8);
 		}
 	}
 }
-.form__custom-chek {
-	display: block;
-	position: relative;
-	width: 16px;
-	height: 16px;
-	border: 1px solid #FFFFFF;
-	border-radius: 2px;
 
-	@media (any-hover: hover) { //только для устройств с ховером
-				&:hover{
-				cursor: pointer;
-			}
-		}
-	&:before{
-		@include absolute-center-old;
-		display: none;
-		width: 8px;
-		height: 8px;
-		border-radius: 2px;
-		background-color: #fff;
-		content: '';
-	}
-}
 .form__policy {
 	@include max-screen($xsss){
 		text-align: left;
