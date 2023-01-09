@@ -6,8 +6,8 @@
 // // Import vendor jQuery plugin example (not module)
 // import Parallax from 'parallax-js'
 
-import Swiper, { Navigation, Pagination, Autoplay, EffectFade} from 'swiper';
-Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
+import Swiper, { Navigation, Pagination, Autoplay, EffectFade, Thumbs} from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay, EffectFade, Thumbs]);
 
 import FormHandler from 'formhandler.js';
 
@@ -410,6 +410,54 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	}
+
+
+	if(document.querySelector('.product-view__screen') !== null && document.querySelector('.product-view__nav') !== null){
+		var navSwiper = new Swiper('.product-view__nav', {
+			observer: true,
+			observeParents: true,
+			slidesPerView: 4,
+			spaceBetween: 15,
+			parallax: true,
+			//autoHeight: true,
+			//speed: 800,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+		  // direction: 'vertical',
+			loop: true
+
+		});
+		var screenSwiper = new Swiper('.product-view__screen', {
+
+			// effect: 'fade',
+			// fadeEffect: {//при отсутствии плавного перехода - расскомментировать соотв-ю. строку в adjustment.scss
+			// 	crossFade: true
+			// },
+
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			//spaceBetween: 0,
+			//autoHeight: true,
+			//speed: 800,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+		  // direction: 'vertical',
+			loop: true,
+			thumbs: {
+				swiper: navSwiper
+			}
+
+		});
+
+	}
+
 
 
 //---------------END Swiper
