@@ -154,9 +154,12 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	var phoneMask = IMask(document.getElementById('callback-phone'), {
-		mask: '+{7} (000) 000-00-00'
-	});
+	if(document.getElementById('callback-phone') !== null){
+		var phoneMask = IMask(document.getElementById('callback-phone'), {
+			mask: '+{7} (000) 000-00-00'
+		});
+		
+	}
 
 	// micromodal
 	if(document.querySelector('.modal') !== null){

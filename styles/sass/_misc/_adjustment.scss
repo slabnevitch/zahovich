@@ -34,6 +34,11 @@ body{
 #wrapper-for-scroll-fix.modal-open {
   padding-right: var(--scroll-width);
 }
+// .header { // в случае position: fixed у хедера
+//    .modal-open &{
+//     	padding-right: var(--scroll-width);
+//    }
+// }
 .modal__overlay{
 	z-index: 10;
 }
