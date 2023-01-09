@@ -105,7 +105,7 @@ var wNumb = require('./vendor/libs-vanilla/wnumb/wNumb.js')
 var noUiSlider = require('./vendor/libs-vanilla/noUiSlider/nouislider.min.js')
 
 //- iMask--------------------------
-// require('./vendor/libs-vanilla/imask/imask.js')
+require('./vendor/libs-vanilla/imask/imask.js')
 
 //- FormHandler--------------------------
 //- html разыметка должна быть как в доке https://ivangrimes.github.io/formhandler.js/, обязателько должен присутствовать <div class="formhandler__notices"></div>!
@@ -154,39 +154,37 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	// micromodal
-		if(document.querySelector('.modal') !== null){
-			MicroModal.init({
-				openTrigger: 'data-micromodal-open', 
-				closeTrigger: 'data-micromodal-close',
-				openClass: 'is-open', 
-				disableFocus: true, 
-				awaitOpenAnimation: true,
-				// awaitCloseAnimation: true,
-				disableScroll: true,
-				onShow: modal => {
-					// console.log(arguments)
-					// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
-					document.querySelector('#wrapper-for-scroll-fix').classList.add('modal-open');
-				}, // [1]
-				onClose: modal => {
-					// console.info(`${modal.id} is hidden`);
-					// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
-					document.querySelector('#wrapper-for-scroll-fix').classList.remove('modal-open');
-				}
-			});		
-		}
-		// END micromodal
+	var phoneMask = IMask(document.getElementById('callback-phone'), {
+		mask: '+{7} (000) 000-00-00'
+	});
 
-	// Fix height: 100% screen scroll problem on Safari ios
-	// if($('selector').length < 0){
-	// 	if(screen.width <= 991 && srvFuncs.isMobile.iOS()){
-	// 		window.addEventListener('resize', () => {
-	// 			document.querySelector('selector').style.setProperty('--height', `${window.innerHeight}px`);
-	// 		});
-	// 	}
-	// }
-	// END Fix height: 100% screen scroll problem on Safari ios
+	// micromodal
+	if(document.querySelector('.modal') !== null){
+		MicroModal.init({
+			openTrigger: 'data-micromodal-open', 
+			closeTrigger: 'data-micromodal-close',
+			openClass: 'is-open', 
+			disableFocus: true, 
+			awaitOpenAnimation: true,
+			awaitCloseAnimation: true,
+			disableScroll: true,
+			onShow: modal => {
+				// console.log(arguments)
+				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+				document.querySelector('#wrapper-for-scroll-fix').classList.add('modal-open');
+			}, // [1]
+			onClose: modal => {
+				// console.info(`${modal.id} is hidden`);
+				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+				// setTimeout(() => {
+					document.querySelector('#wrapper-for-scroll-fix').classList.remove('modal-open');
+
+				// }, 1000);
+			}
+		});		
+	}
+	// END micromodal
+
 
 	// for many Sliders
 	if(document.querySelector('.range-slider') !== null){
@@ -316,11 +314,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if(document.querySelector('.banners-slider') !== null){
 		var bannerSwiper = new Swiper('.banners-slider', {
-
-			effect: 'fade',
+			allowTouchMove: false,
 			fadeEffect: {
 			    crossFade: true
 			  },
+			effect: 'fade',
 			observer: true,
 			observeParents: true,
 			loop: true
@@ -419,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	tippy('[data-tippy-content]');
 
 	if(document.querySelector('.footer__form') != null){
-		var pizdyk = new FormHandler({
+		new FormHandler({
 			form: {
 				block: '.form-footer',
 				submit: '.form-footer__submit'
@@ -455,15 +453,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			  	}
 			  }
 		});
-		console.log(pizdyk)
+		// console.log(pizdyk)
 
 	}
 
 	if(document.querySelector('.modal') != null){
-		var piska = new FormHandler({
+		new FormHandler({
 			form: {
-				block: '.callback-form',
-				submit: '.callback-form__submit'
+				// block: '.callback-form',
+				// submit: '.callback-form__submit'
 			},
 			// block: '.callback-form',
 			fields: {
@@ -483,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			      		 nextToField: false
 					}
 				},
-				checkbox2: {
+				checkbox: {
 			      validation: 'isCheckboxChecked',
 			      notice: {
 						message: 'Нужно ваше согласие с условиями',
@@ -496,33 +494,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			    send: true
 			 }
 		});
-		console.log(piska)
+		// console.log(piska)
 
 	}
-
-// 	const formhandler = new FormHandler({
-//   fields: {
-//     firstname: {
-//       validation: 'isName',
-//     },
-//     lastname: {
-//       validation: 'isName',
-//     },
-//     select: {
-//       validation: 'isSelected',
-//     },
-//     checkbox: {
-//       validation: 'isCheckboxChecked',
-//     },
-//     radio: {
-//       validation: 'isRadioChecked',
-//     },
-//     message: {
-//       validation: 'isNonEmpty',
-//     },
-//   },
-// });
-
-
 
 }); //DOMContentLoaded

@@ -241,3 +241,9 @@ line-height: 32px;
 	text-align: center;
 	// max-width: 295px;
 }
+// исправление бага отсутствия прозрачности при fade--переходах с/у слайдами
+.swiper-container-fade{
+	.swiper-slide{
+		transition: opacity .5s !important;
+	}
+}

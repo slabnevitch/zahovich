@@ -37,6 +37,15 @@ body{
 .modal__overlay{
 	z-index: 10;
 }
+.modal__container{//компенсация сдвига модалки при анимации исчезновения
+	margin-left: var(--scroll-width);
+  .modal-open & {
+  	margin-left: 0;
+  }
+
+}
+// END компенсация ширины скроллбара при появлении ванильных поапов
+
 // Прижать футер к низу
 
 // html, body{
@@ -282,4 +291,10 @@ padding-bottom: 52.25%;
 .micromodal-slide{
 	// display: block;
 }
+// исправление бага отсутствия прозрачности при fade--переходах с/у слайдами
+// .swiper-container-fade{
+// 	.swiper-slide{
+// 		transition: opacity .5s !important;
+// 	}
+// }
 /*--------------------END adjustment----------------------*/ 

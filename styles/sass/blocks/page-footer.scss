@@ -160,10 +160,12 @@ color: rgba(255, 255, 255, 0.8);
 }
 .form {
 
-	.btn[type="submit"] {
 
+}
+.form-footer__submit{
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		@include but-null;
 		background-color: $accent;
 		border-radius: 0 3px 3px 0;
@@ -173,7 +175,6 @@ color: rgba(255, 255, 255, 0.8);
 			font-size: 12px;
 			color: #fff;
 		}
-	}
 }
 
 .form__custom-policy {
