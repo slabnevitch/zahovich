@@ -139,7 +139,7 @@ require('./vendor/libs-vanilla/fstdropdown/fstdropdown.min.js')
 // var baguetteBox = require('./vendor/libs-vanilla/baguetteBox/dist/baguetteBox.min.js')
 
 //- counter--------------------------
-// require('./vendor/libs-vanilla/counter/counter.js')
+require('./vendor/libs-vanilla/counter/counter.js')
 
 // var tingle = require('./vendor/libs-vanilla/tingle-master/dist/tingle.js')
 	

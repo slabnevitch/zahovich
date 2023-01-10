@@ -37,17 +37,84 @@
 		</div>
 	</div>
 
-	<div class="product-info__options product-info-row">
-		<div class="product-info__option option-product-info">
-			<div class="option-product-info__name">Сталь</div>
-			<div class="option-product-info__select">
-				<select name="sort" id="sort" class="fstdropdown-select" data-searchdisable="true">
-					<option value="1" selected>первая</option>
-					<option value="2">По цене</option>
-					<option value="2">По отзывам</option>
-					<option value="2">По по рейтингу</option>
+	<div class="product-info__options options-product-info product-info-row">
+			<div class="options-product-info__name">Сталь</div>
+			<div class="options-product-info__select">
+				<select name="stal" class="fstdropdown-select" data-searchdisable="true">
+					<option value="1" selected>Выбрать сталь</option>
+					<option value="3">100Х13М</option>
+					<option value="4">110Х18М-ШД</option>
+					<option value="5">50Х14МФ</option>
+					<option value="6">95Х18</option>
+					<option value="7">AUS-8</option>
+					<option value="8">ELMAX</option>
+					<option value="9">RWL-34</option>
 				</select>
 			</div>
+
+			<div class="options-product-info__name">Рукоять</div>
+			<div class="options-product-info__select">
+				<select name="ruk" class="fstdropdown-select" data-searchdisable="true">
+					<option value="1" selected>Выбрать рукоять</option>
+					<option value="2">Mercorne</option>
+					<option value="3">Березовый кап</option>
+					<option value="4">Бубинго</option>
+					<option value="5">Граб</option>
+					<option value="6">Дуб</option>
+					<option value="7">Кап</option>
+					<option value="8">Комбинированная</option>
+				</select>
+			</div>
+
+			<div class="options-product-info__name">Гарда и тыльник</div>
+			<div class="options-product-info__select">
+				<select name="garda" class="fstdropdown-select" data-searchdisable="true">
+					<option value="1" selected>Выбрать гарда и тыльник</option>
+					<option value="2">Алюминий</option>
+					<option value="3">Латунь</option>
+					<option value="4">Литой Барс</option>
+					<option value="5">Литой Пума</option>
+					<option value="6">Литье</option>
+					<option value="7">Металлический</option>
+					<option value="8">Нержавеющая сталь</option>
+				</select>
+			</div>
+
+			<div class="options-product-info__name">Обработка клинка</div>
+			<div class="options-product-info__select">
+				<select name="klinok" class="fstdropdown-select" data-searchdisable="true">
+					<option value="1" selected>Выбрать обработку клинка</option>
+					<option value="2">Алюминий/option>
+					<option value="3">Латунь</option>
+					<option value="4">Литой Барс</option>
+					<option value="5">Литой Пума</option>
+					<option value="6">Литье</option>
+					<option value="7">Металлический</option>
+					<option value="8">Нержавеющая сталь</option>
+				</select>
+			</div>
+	</div>
+	<div class="product-info__bottom product-info-row">
+		<div class="product-info__purchase">
+			<div class="product-info__price">3 865</div>
+			<div class="product-info__points points-product-info">
+				<div class="points-product-info__value">+ 449 баллов за покупку</div>
+				<div class="points-product-info__ques" data-tippy-content="Вам будут начислены баллы в размере 5% от стоимости покупки. Их можно будет использовать на оплату последующих заказов.">?</div>
+			</div>
+		</div>
+		<div class="product-info__operation">
+			<div class="product-info__counter">
+				<div class="counter" data-min="0" data-max="10">
+					<button class="counter__button counter-minus">-</button>
+					<input class="counter__count" autocomplete="off" type="text" name="name" value="1" readonly />
+					<button class="counter__button counter-plus">+</button>
+				</div>
+			</div>
+			<div class="product-info__buttons">
+				<a href="#" class="btn">В корзину <i class="icon-cart"></i></a>
+				<a href="#" class="btn btn-dark">Купить в 1 клик</a>
+			</div>
+
 		</div>
 	</div>
 </div>
