@@ -87,7 +87,7 @@ require('./vendor/libs-vanilla/accordion/vanilla-accordion.js')
 // require('./vendor/libs-vanilla/tabs/tabs-pure.js')
 
 //- tabs-accordion-combine--------------------------
-// require('./vendor/libs-vanilla/tabs-accordion-combine/tabs-accordion.js')
+require('./vendor/libs-vanilla/tabs-accordion-combine/tabs-accordion.js')
 	
 //- micromodal--------------------------
 var MicroModal = require('./vendor/libs-vanilla/micromodal/micromodal.js')
