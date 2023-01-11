@@ -466,6 +466,16 @@ document.addEventListener('DOMContentLoaded', () => {
 //---------------END Swiper
 
 	tippy('[data-tippy-content]');
+	tippy('#product-tippy', {
+		theme: 'zlatmax', 
+		maxWidth: 'none',
+		allowHTML: true,
+		// content: '<div class="pizdyk">Pizduk</div>',
+		// trigger: 'click',
+		content: (reference) => `<div class="points-tooltip">${reference.getAttribute('tooltip-title')}</div>`,
+		offset: [150, 15]
+	});
+
 
 	if(document.querySelector('.footer__form') != null){
 		new FormHandler({
