@@ -304,4 +304,20 @@ h2{
     width: 410px;
   }
 }
+
+.rub{
+  &:after{
+    content: '';
+    width: em(12);
+    height: em(11);
+    display: inline-block;
+    // vertical-align: middle;
+    margin-left: em(8);
+    background-color: #fff;
+    background-image: url(../images/dist/rub_ico.svg);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+}
 /*--------------------END ui----------------------*/ 
