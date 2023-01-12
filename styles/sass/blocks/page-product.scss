@@ -297,4 +297,260 @@ font-size: 18px;
 	}
 
 }
-.btn-dark {}
+
+.wrapper {}
+.page-product__chars {
+
+}
+.product-chars {
+	padding: 30px 30px 0 30px;
+	background: #FEFEFE;
+box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+	.combine {
+		.tab {
+			&.active{
+				background-color: transparent;
+
+			}
+		}
+
+	}
+
+}
+._tabs {}
+.accordion {}
+.product-chars__tabs {}
+.tabs-product-chars {
+	
+	.tabs-buttons {
+		// display: flex;
+		@include adaptive-value('column-gap', 60, 8, 1);
+		border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+	}
+}
+.accordion__item {}
+.tabs-product-chars__item {
+	.accordion__content {
+		padding-top: 15px;
+	}
+
+}
+.accordion__link {}
+.tabs-product-chars__link {
+	display: block;
+	position: relative;
+	padding-bottom: 20px;
+	font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+
+color: rgba(20, 20, 20, 0.5);
+
+	@include max-screen($sm){
+		margin-bottom: 15px;
+	}
+	&.active {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 24px;
+
+		color: #141414;
+		
+		&:after{
+			content: '';
+			width: 100%;
+			position: absolute;
+			display: block;
+			height: 2px;
+			background-color: $accent;
+			left: 0;
+			bottom: -1px;
+		}
+	}
+
+
+}
+.hidden {}
+.product-chars__content {}
+.content-product-chars {}
+.product-chars__descr{
+	padding-bottom: 30px;
+}
+.tab-content {}
+.content-product-chars__item {
+	padding-top: 30px;
+}
+.replaced-tab-content {}
+.product-chars__text {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+}
+.chars__features {
+	column-width: 362px;
+	column-gap: 60px;
+	column-rule: 1px solid rgba(20, 20, 20, 0.15);
+}
+.chars__feature {}
+.feature-chars {
+	break-inside: avoid;
+	// break-after: avoid;
+	@include min-screen($xsss){
+		padding-bottom: 30px;
+		
+	}
+}
+.feature-chars__tiltle {
+	@include adaptive-value('margin-bottom', 30, 15, 1);
+	font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+}
+.feature-chars__table {
+	display: grid;
+	font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+	
+	@include min-screen($xsss){
+		grid-template-columns: auto 1fr;
+		grid-column-gap: 60px;
+		grid-row-gap: 20px;
+		
+	}
+}
+.feature-chars__key {}
+.feature-chars__val {
+	@include max-screen($xsss){
+		margin-bottom: 15px;
+	}
+}
+.product-chars__reviews{
+	// padding-bottom: 30px;
+}
+.product-noreviews {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 30px;
+	gap: 30px;
+
+	@include max-screen($md){
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.btn {
+		flex: 0 0 auto;
+	}
+}
+
+.product-noreviews__text {
+	flex: 1 1 aiuto;
+	font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+}
+.product-review-row {
+	padding: 30px 0;
+
+	&:not(:last-child){
+		border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+	}
+}
+.product-review {
+	display: grid;
+	grid-column-gap: 30px;
+		grid-template-columns: 80px 1fr;
+
+	@include max-screen($xs){
+		grid-row-gap: 15px;
+		grid-template-columns: 50px 1fr;
+		
+	}
+}
+.product-review__userpic {
+	width: 80px;
+	height: 80px;
+	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
+
+	@include max-screen($xss){
+		width: 50px;
+		height: 50px;
+	}
+
+	img{
+		@include absolute-center;
+	}
+}
+.product-review__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 30px;
+	margin-bottom: 20px;
+
+	@include max-screen($xs){
+		flex-direction: column;
+		row-gap: 15px;
+	}
+}
+.product-review__userblock {}
+.product-review__name {
+	margin-bottom: 10px;
+	font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+}
+.product-review__rating {
+	.star-rating {
+		@include star-rating(21px, 10px, $accent);
+	}
+
+}
+.star-rating__star {}
+.product-review__date {
+	font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+color: rgba(20, 20, 20, 0.3);
+}
+.product-review__body {
+	grid-column: span 2;
+	@include min-screen($xs){
+		grid-column: 2/3;
+		
+	}
+}
+.product-review__text {
+	font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+}
+.product-review__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 30px;
+}
+.product-review__link {
+	color: $accent;
+	font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+}
+.product-review__like {}
+.icon-favorites {}
+.product-delivery {}
+.product-delivery__row {}
+.product-delivery__val {}
+.product-delivery__list {}
+.dropdown-dark {}
+.fstdropdown-select {}
+.product-delivery__methods {}
+.product-delivery__method {}
+.product-delivery__logo {}
+.product-delivery__name {}
+.product-delivery__termin {}
+.product-delivery__price {}

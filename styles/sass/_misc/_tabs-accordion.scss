@@ -6,6 +6,12 @@
 		li{
 			list-style-type: none;
 		}
+		.accordion__link{
+			&:hover, &:active, &:focus{
+				text-decoration: none;
+			}
+			
+		}
 	}
 	.tab{
 		&.active{
@@ -13,6 +19,7 @@
 		}
 	}
 	.tab-content{
+		list-style-type: none;
 		@media screen and (max-width: $checkpoint){
 			display: none;
 		}
