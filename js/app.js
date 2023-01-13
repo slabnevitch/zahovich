@@ -144,7 +144,13 @@ require('./vendor/libs-vanilla/counter/counter.js')
 // var tingle = require('./vendor/libs-vanilla/tingle-master/dist/tingle.js')
 	
 // require('./vendor/color-scheme-switcher.js')
+
+var Locations = require('./vendor/locations.js')
 //- end VANILLA JS===================================
+
+// console.log(axios);
+
+
 
 
 document.querySelector('#multilevel-panel-open').onclick = function(e) {
@@ -153,6 +159,10 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	console.log(Locations);
+	var  locs = new Locations().events();
+
 
 	if(document.getElementById('callback-phone') !== null){
 		var phoneMask = IMask(document.getElementById('callback-phone'), {

@@ -320,4 +320,41 @@ h2{
     background-size: auto 100%;
   }
 }
+
+.modal-loc{
+  .modal__container{
+    width: 100%;
+
+  }
+  &__preloader{
+    height: 100px;
+    position: relative;
+    transition: all .3s;
+
+    &.disable{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: $accent transparent;
+  border-radius: 50%;
+  display: inline-block;
+  @include absolute-center-old;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+}
 /*--------------------END ui----------------------*/ 
