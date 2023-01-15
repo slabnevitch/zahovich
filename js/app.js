@@ -161,7 +161,7 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 document.addEventListener('DOMContentLoaded', () => {
 
 	console.log(Locations);
-	var  locs = new Locations().events();
+	var locs = new Locations().events();
 
 
 	if(document.getElementById('callback-phone') !== null){

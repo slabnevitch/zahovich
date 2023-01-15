@@ -78,7 +78,7 @@
 
 
 	&:before{
-		content: '\e90a';
+		content: '\e90e';
 		font-family: icomoon !important;
 	    speak: never;
 	    font-style: normal;
@@ -299,6 +299,15 @@ span{
 	color: $text;
 	text-decoration: none;
 		font-size: 27px;
+
+	&:before{
+		@include max-screen($md){
+			color: #fff;
+			}
+
+
+	}
+
 
 		@include max-screen($md){
 			color: #fff;
