@@ -187,16 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
 				// console.log(event)
 				// console.log(modal)
 				
-				// в случае добавление всплывашки с youtube-video, ссыдка на видео указывается в data-micromodal-iframe=""
-				// кнопки-trigger'a
+				// в случае добавление всплывашки с youtube-video, ссылка на видео указывается в data-micromodal-iframe=""
+				// кнопки-trigger'a. Сама кнопка должна иметь такие аттрибуты: 
+				// data-micromodal-iframe="QFq6PiZ1BQ8" data-autoplay data-micromodal-open="video-modal"
 				if (trigger.hasAttribute('data-micromodal-iframe')) {
-					var markup = '<div class="modal__video">'+
-						'<iframe src='+trigger.getAttribute('data-micromodal-iframe')+' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'+
-					'</div>',
-					division = document.createElement('div');
-					console.log(division)
+					var embedSrc = trigger.getAttribute('data-micromodal-iframe'),
+						autoplay = trigger.hasAttribute('data-autoplay') ? '?autoplay=1' : '',
+						pattern = 'https://www.youtube.com/embed/%id%'+ autoplay;
+					
+					embedSrc = pattern.replace('%id%', embedSrc );
+
+					console.log(embedSrc);
 					modal.querySelector('.modal__content').insertAdjacentHTML('beforeend', '<div class="modal__video">'+
-						'<iframe src='+trigger.getAttribute('data-micromodal-iframe')+' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'+
+						'<iframe src='+embedSrc+' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'+
 					'</div>');
 				}
 				
@@ -207,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			onClose: modal => {
 				// console.info(`${modal.id} is hidden`);
 
+				// удаление айфрейма при закрытии поапа
 				if(modal.querySelector('.modal__video') !== null){
 					modal.querySelector('.modal__video').remove();
 				}
