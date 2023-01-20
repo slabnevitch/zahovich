@@ -136,7 +136,7 @@ import tippy from 'tippy.js';
 require('./vendor/libs-vanilla/fstdropdown/fstdropdown.min.js')
 
 //- baguetteBox-------------------------- use: https://github.com/feimosi/baguetteBox.js#usage
-// var baguetteBox = require('./vendor/libs-vanilla/baguetteBox/dist/baguetteBox.min.js')
+var baguetteBox = require('./vendor/libs-vanilla/baguetteBox/dist/baguetteBox.min.js')
 
 //- counter--------------------------
 require('./vendor/libs-vanilla/counter/counter.js')
@@ -160,8 +160,8 @@ document.querySelector('#multilevel-panel-open').onclick = function(e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	console.log(Locations);
-	var locs = new Locations().events();
+	// console.log(Locations);
+	// var locs = new Locations().events();
 
 
 	if(document.getElementById('callback-phone') !== null){
@@ -181,18 +181,39 @@ document.addEventListener('DOMContentLoaded', () => {
 			awaitOpenAnimation: true,
 			awaitCloseAnimation: true,
 			disableScroll: true,
-			onShow: modal => {
-				// console.log(arguments)
+			onShow: (modal, trigger, event) => {
+
+				// console.log(trigger)
+				// console.log(event)
+				// console.log(modal)
+				
+				// в случае добавление всплывашки с youtube-video, ссыдка на видео указывается в data-micromodal-iframe=""
+				// кнопки-trigger'a
+				if (trigger.hasAttribute('data-micromodal-iframe')) {
+					var markup = '<div class="modal__video">'+
+						'<iframe src='+trigger.getAttribute('data-micromodal-iframe')+' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'+
+					'</div>',
+					division = document.createElement('div');
+					console.log(division)
+					modal.querySelector('.modal__content').insertAdjacentHTML('beforeend', '<div class="modal__video">'+
+						'<iframe src='+trigger.getAttribute('data-micromodal-iframe')+' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'+
+					'</div>');
+				}
+				
 				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
 				document.querySelector('#wrapper-for-scroll-fix').classList.add('modal-open');
-			}, // [1]
+
+			},
 			onClose: modal => {
 				// console.info(`${modal.id} is hidden`);
-				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
-				// setTimeout(() => {
-					document.querySelector('#wrapper-for-scroll-fix').classList.remove('modal-open');
 
-				// }, 1000);
+				if(modal.querySelector('.modal__video') !== null){
+					modal.querySelector('.modal__video').remove();
+				}
+				
+				// при disableScroll: true для компенсации ширины скроллбара (фикс "прыгания" страницы влево)
+				document.querySelector('#wrapper-for-scroll-fix').classList.remove('modal-open');
+
 			}
 		});		
 	}
@@ -468,6 +489,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 
 		});
+
+		baguetteBox.run('.product-view__gallery');
 
 	}
 

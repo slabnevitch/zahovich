@@ -214,6 +214,10 @@ padding-bottom: 52.25%;
 // @import "_misc/multilevel-dropdown.scss";
 @import "_misc/_single-dropdown.scss";
 
+.product-info__rating .star-rating__star:before{
+	position: static !important;
+}
+
 @mixin toggle-mnu($color: #000, $point: $md, $top:15px, $right:30px){
 	.toggle-mnu{
 		// position: fixed;
@@ -302,4 +306,24 @@ padding-bottom: 52.25%;
 // 		transition: opacity .5s !important;
 // 	}
 // }
+
+.modal-video{
+	.modal__container{
+		width: 100%;
+		padding: 0;
+		max-width: 720px;
+		overflow: visible;
+	}
+	.modal__content{
+		margin: 0;
+	}
+	.modal__close{
+		top: -20px;
+		right: -15px;
+	}
+}
+	.modal__video{
+		@include video();
+
+	}
 /*--------------------END adjustment----------------------*/ 
